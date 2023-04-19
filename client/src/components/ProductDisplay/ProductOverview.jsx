@@ -1,16 +1,16 @@
-import React from "react"
+import React from "react";
 import PropTypes from "prop-types";
 
-const ProductOverview = ({productName, price,description,image}) => {
+const ProductOverview = ({ productName, price, description, image }) => {
   return (
     <div className="product-overview">
-       <p>{productName}</p>
-            <p>{price}</p>
-            <p>{description}</p>
-            <img src={image} alt="" />
+      <p>{productName}</p>
+      <p>{price}</p>
+      <p>{description}</p>
+      <img src={image} alt="" />
     </div>
-  )
-}
+  );
+};
 
 ProductOverview.propTypes = {
   productName: PropTypes.string.isRequired,
@@ -19,4 +19,4 @@ ProductOverview.propTypes = {
   image: PropTypes.string.isRequired,
 };
 
-export default ProductOverview
+export default ProductOverview;

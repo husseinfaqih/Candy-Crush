@@ -9,7 +9,7 @@ export const products = [
     description:
       "Everyone's favorite treat comes dressed to impress. Oreo cookies dipped in dark chocolate are a traditional gift for expectant mothers, but we won't ask for proof of pregnancy before we ship! There are approximately 22 pieces per pound. Box contains 5 pounds of Dark Chocolate Covered Oreo Cookies Candy. Made in the USA. Shipping Weight ~ 6 lbs. Kosher Certified.",
     category: "Cookies",
-    rating:2,
+    rating: 2,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const products = [
     description:
       "A classic Hershey's milk chocolate candy bar that will satisfy your sweet tooth cravings. Each bar contains 1.55 ounces of chocolatey goodness. Box contains 36 bars. Made in the USA. Gluten-free.",
     category: "Candy",
-    rating:4,
+    rating: 4,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export const products = [
     description:
       "A healthy and delicious fruit basket filled with a variety of fresh, organic fruits. Perfect for sharing with friends and family or as a gift for someone special. Contains a mix of apples, oranges, bananas, and grapes. Made with organic ingredients. Basket not included.",
     category: "Fruit",
-    rating:0,
+    rating: 0,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const products = [
     description:
       "Start your day off right with our fair trade coffee beans. This medium roast blend is smooth and rich, with a hint of caramel and chocolate flavors. Packaged in a 12oz bag. Fair trade certified. Roasted in the USA.",
     category: "Coffee",
-    rating:3,
+    rating: 3,
   },
   {
     id: 5,
@@ -57,6 +57,6 @@ export const products = [
     description:
       "Indulge in our gourmet cheese assortment, featuring a variety of delicious cheeses. Includes cheddar, brie, gouda, and blue cheese. Perfect for entertaining or enjoying on your own. Packaged in a convenient tray. Made in France.",
     category: "Cheese",
-    rating:0,
+    rating: 0,
   },
 ];

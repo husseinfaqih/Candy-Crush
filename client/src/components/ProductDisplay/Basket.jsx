@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import { BsCart } from "react-icons/bs";
 
 const Basket = () => {
@@ -6,7 +6,7 @@ const Basket = () => {
     <div>
       <BsCart size={40} />
     </div>
-  )
-}
+  );
+};
 
-export default Basket
+export default Basket;

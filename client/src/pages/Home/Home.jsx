@@ -1,6 +1,6 @@
 import React from "react";
 import TEST_ID from "./Home.testid";
-import ProductDisplay from "../../components/ProductDisplay/ProductDisplay"
+import ProductDisplay from "../../components/ProductDisplay/ProductDisplay";
 const Home = () => {
   return (
     <div data-testid={TEST_ID.container}>
