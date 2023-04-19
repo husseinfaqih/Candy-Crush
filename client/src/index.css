@@ -11,17 +11,17 @@
   text-align: center;
 }
 
-.product-display-component p {
+.product-overview p {
   margin: 0;
   font-size: 1.2em;
 }
 
-.product-display-component img {
+.product-overview img {
   width: 100%;
   margin: 1em 0;
 }
 
-.product-display-component div {
+.product-overview div {
   display: flex;
   justify-content: center;
   margin: 1em 0;
