@@ -7,6 +7,8 @@ import FavoriteButton from "./FavoriteButton";
 import CartButton from "./CartButton";
 import "./header.css";
 import MainTitle from "./MainTitle";
+import DonutOne from "./DonutOne";
+import DonutTwo from "./DonutTwo";
 
 function Header() {
   return (
@@ -19,6 +21,8 @@ function Header() {
       <LoginButton />
       <FavoriteButton />
       <CartButton />
+      <DonutOne />
+      <DonutTwo />
       <MainTitle />
     </header>
   );

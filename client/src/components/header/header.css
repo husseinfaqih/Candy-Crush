@@ -64,3 +64,10 @@
   line-height: 3.3rem;
   text-align: center;
 }
+
+.header-donut {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin: 10% 0 0 0;
+}

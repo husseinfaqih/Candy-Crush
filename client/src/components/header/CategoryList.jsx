@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CategoryList() {
+  // eslint-disable-next-line no-unused-vars
+  const [categories, setCategories] = useState(["Cookies", "Candy Corn"]);
+
   return (
     <div className="header-category-list-block">
       <label>Categories</label>
@@ -9,11 +12,14 @@ function CategoryList() {
         id="category-select"
         className="header-category-list"
       >
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-        <option value="category3">Category 3</option>
-        <option value="category4">Category 4</option>
-        <option value="category5">Category 5</option>
+        {categories &&
+          categories.map((category) => {
+            return (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            );
+          })}
       </select>
     </div>
   );
