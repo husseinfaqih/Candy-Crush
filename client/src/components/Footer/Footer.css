@@ -1,0 +1,10 @@
+* {
+  list-style: none;
+}
+.footer-catagory {
+  background-color: plum;
+  display: flex;
+}
+.footer-contact {
+  background-color: aqua;
+}
