@@ -11,12 +11,8 @@ const ProductDisplay = () => {
       {products.map((product) => {
         return (
           <div className="product-display-component" key={product.id}>
-            <ProductOverview
-              productName={product.productName}
-              price={product.price}
-              description={product.description}
-              image={product.image}
-            />
+            <ProductOverview product={product} />
+
             <Rating productRating={product.rating} />
             <Favorite />
             <Basket />

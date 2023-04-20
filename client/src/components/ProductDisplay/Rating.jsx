@@ -1,81 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 const Rating = ({ productRating }) => {
-  function ratingSystem(rating) {
-    {
-      if (rating == 1) {
-        return (
-          <div>
-            <AiFillStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-          </div>
-        );
-      }
-      if (rating == 2) {
-        return (
-          <div>
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-          </div>
-        );
-      }
+  const filledStar = <AiFillStar size={40} />;
+  const emptyStar = <AiOutlineStar size={40} />;
 
-      if (rating == 3) {
-        return (
-          <div>
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-          </div>
-        );
-      }
-      if (rating == 4) {
-        return (
-          <div>
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiOutlineStar size={40} />
-          </div>
-        );
-      }
-      if (rating == 5) {
-        return (
-          <div>
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-            <AiFillStar size={40} />
-          </div>
-        );
-      } else {
-        return (
-          <div>
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-            <AiOutlineStar size={40} />
-          </div>
-        );
-      }
-    }
-  }
+  const stars = Array.from({ length: 5 }, (_, i) =>
+    i < productRating ? filledStar : emptyStar
+  );
 
-  return <div>{ratingSystem(productRating)}</div>;
+  return (
+    <div>
+      {stars.map((star, index) => (
+        <span key={index}>{star}</span>
+      ))}
+    </div>
+  );
 };
 
 Rating.propTypes = {
