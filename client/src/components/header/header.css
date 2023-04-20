@@ -61,11 +61,16 @@
   margin: 10% 0 0 10%;
   cursor: pointer;
   height: fit-content;
+  text-decoration: none;
+  color: black;
 }
 
 .header-favorites-button {
   margin: 10% 0 0 1%;
   cursor: pointer;
+}
+
+.header-favorites-button-image {
   height: 20px;
   width: 20px;
 }
@@ -73,8 +78,11 @@
 .header-cart-button {
   margin: 10% 0 0 1%;
   cursor: pointer;
-  height: 20px;
-  width: 20px;
+}
+
+.header-cart-button-image {
+  height: 25px;
+  width: 25px;
 }
 
 .header-title {
