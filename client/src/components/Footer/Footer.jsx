@@ -43,7 +43,10 @@ function Footer() {
           <div className="footer-copyright">
             <p>Copyright information:</p>
             <p>&copy;2023 Sugar Rush. All rights reserved</p>
-            <p>Created with <span className="heart">&#10084;</span>| HYF Class41 Team 1</p>
+            <p>
+              Created with <span className="heart">&#10084;</span>| HYF Class41
+              Team 1
+            </p>
           </div>
         </div>
         <div className="footer-sugarrush">
