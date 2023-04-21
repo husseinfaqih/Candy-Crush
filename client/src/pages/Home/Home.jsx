@@ -1,14 +1,26 @@
 import React from "react";
-import TEST_ID from "./Home.testid";
-import Promotion from "../../components/promotion/Promotion";
 import Header from "../../components/header/Header";
-
+import Promotion from "../../components/promotion/Promotion";
+import { categories } from "../../fakeCategories.js";
+import Category from "../../components/category/Category";
 const Home = () => {
   return (
-    <div data-testid={TEST_ID.container}>
-      <Promotion />
+    <div>
       <Header />
-      <h1>This is the homepage</h1>
+      <Promotion />
+      <h1 style={{ textAlign: "center" }}>Categories</h1>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          backgroundColor: "#FEE588",
+        }}
+      >
+        {categories.map((category) => (
+          <Category key={category.headerText} {...category} />
+        ))}
+      </div>
     </div>
   );
 };

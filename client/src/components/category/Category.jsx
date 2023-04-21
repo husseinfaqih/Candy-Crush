@@ -6,6 +6,8 @@ export default function Category({ imageUrl, headerText, descText }) {
     position: "relative",
     width: "400px",
     height: "400px",
+    marginRight: "20px",
+    marginBottom: "200px",
   };
 
   const imageStyles = {
@@ -23,12 +25,22 @@ export default function Category({ imageUrl, headerText, descText }) {
     left: "50%",
     transform: "translate(-50%, 10%)",
     background: "rgba(245, 245, 245, 0.7)",
-    height: "250px",
+    height: "300px",
     width: "250px",
   };
   const textStyles = {
     position: "absolute",
     top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    color: "black",
+    fontWeight: "bold",
+    fontSize: "24px",
+    textAlign: "center",
+  };
+  const buttonStyles = {
+    position: "absolute",
+    bottom: "-50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     color: "black",
@@ -47,6 +59,7 @@ export default function Category({ imageUrl, headerText, descText }) {
           </span>
         </div>
       </div>
+      <button style={buttonStyles}>SHOP NOW</button>
     </div>
   );
 }
