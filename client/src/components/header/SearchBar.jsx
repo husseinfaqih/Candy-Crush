@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SearchComponent from "./SearchComponent";
+import useSearch from "../../hooks/useSearch";
 
 function SearchBar() {
   const [searchWord, setSearchWord] = useState("");
-  const [handleSearch] = SearchComponent(searchWord);
+  const [handleSearch] = useSearch(searchWord);
 
   const handleInputChange = (event) => {
     setSearchWord(event.target.value);

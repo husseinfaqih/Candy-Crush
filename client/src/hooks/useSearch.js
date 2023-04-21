@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import useFetch from "../../hooks/useFetch";
+import useFetch from "./useFetch";
 
-function SearchComponent(searchWord) {
+function useSearch(searchWord) {
   const [products, setProducts] = useState(null);
   const { performFetch, cancelFetch } = useFetch("/product", (response) => {
     setProducts(response.result);
@@ -11,6 +11,7 @@ function SearchComponent(searchWord) {
     performFetch();
     return cancelFetch;
   }, []);
+
   function handleSearch() {
     const filteredData = products.filter((item) => {
       const productName = item.productName
@@ -29,8 +30,8 @@ function SearchComponent(searchWord) {
   return [handleSearch];
 }
 
-SearchComponent.propTypes = {
+useSearch.propTypes = {
   searchWord: PropTypes.string.isRequired,
 };
 
-export default SearchComponent;
+export default useSearch;
