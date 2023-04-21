@@ -1,12 +1,25 @@
 import React from "react";
-
-import TEST_ID from "./Home.testid";
+import Category from "../../components/category/Category";
+import { categories } from "../../fakeCategories";
 
 const Home = () => {
   return (
-    <div data-testid={TEST_ID.container}>
-      <h1>This is the homepage</h1>
-      <p>Good luck with the project!</p>
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        backgroundColor: "#FEE588",
+      }}
+    >
+      {categories.map((category) => (
+        <Category
+          key={category.descText}
+          imageUrl={category.imageUrl}
+          headerText={category.headerText}
+          descText={category.descText}
+        />
+      ))}
     </div>
   );
 };
