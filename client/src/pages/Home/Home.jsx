@@ -18,12 +18,7 @@ const Home = () => {
         }}
       >
         {categories.map((category) => (
-          <Category
-            key={category.descText}
-            imageUrl={category.imageUrl}
-            headerText={category.headerText}
-            descText={category.descText}
-          />
+          <Category key={category.headerText} {...category} />
         ))}
       </div>
     </div>
