@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import Logo from "../header/Logo";
+import Socialmedia from "../Socialmedia";
 function Footer() {
   return (
     <footer>
@@ -53,6 +54,7 @@ function Footer() {
           <div className="footer-logo">
             <Logo position="footer" />
           </div>
+          <Socialmedia />
         </div>
       </div>
     </footer>

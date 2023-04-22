@@ -39,3 +39,15 @@ footer {
 .heart {
   color: red;
 }
+.footer-sugarrush {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.social-media {
+  position: absolute;
+  right: 190px;
+  bottom: 80px;
+}
+.social-media img {
+  width: 45px;
+}
