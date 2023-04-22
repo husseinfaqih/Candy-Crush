@@ -12,6 +12,7 @@ const SortAndFilter = () => {
         flexDirection: "column",
         width: "15vw",
         backgroundColor: "gray",
+        float: "left",
       }}
     >
       <h3 style={{ margin: "2px" }}>Categories</h3>
