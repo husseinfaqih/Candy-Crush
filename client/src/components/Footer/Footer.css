@@ -1,0 +1,53 @@
+* {
+  list-style: none;
+  box-sizing: border-box;
+}
+footer {
+  background-color: #fe97c4;
+  color: #ffffff;
+  font-family: Comic Sans MS;
+  font-style: italic;
+}
+.footer-container {
+  display: flex;
+  position: relative;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.footer-information {
+  padding: 20px 100px;
+}
+
+.footer-information h4 {
+  padding-top: 50px;
+  padding-left: 40px;
+  font-weight: bold;
+}
+.footer-catagory {
+  display: flex;
+}
+
+.footer-copyright {
+  padding: 4px 40px;
+}
+
+.footer-logo {
+  position: absolute;
+  right: 150px;
+  top: 75px;
+}
+.heart {
+  color: red;
+}
+.footer-sugarrush {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.social-media {
+  position: absolute;
+  right: 190px;
+  bottom: 80px;
+}
+.social-media img {
+  width: 45px;
+}
