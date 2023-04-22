@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import useFetch from "./useFetch";
+import { useNavigate } from "react-router-dom";
 
 function useSearch(searchWord) {
+  const navigate = useNavigate();
   const [products, setProducts] = useState(null);
   const { performFetch, cancelFetch } = useFetch("/product", (response) => {
     setProducts(response.result);
@@ -24,8 +26,9 @@ function useSearch(searchWord) {
         category.includes(searchTermLower)
       );
     });
-    // eslint-disable-next-line no-console
-    console.log(filteredData);
+
+    filteredData &&
+      navigate("/searchResult", { state: { productsSearch: filteredData } });
   }
   return [handleSearch];
 }
