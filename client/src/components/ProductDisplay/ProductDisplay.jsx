@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 const ProductDisplay = () => {
   const [products, setProducts] = useState(null);
   const { isLoading, error, performFetch, cancelFetch } = useFetch(
-    "/product",
+    "/product?page=0",
     (response) => {
       setProducts(response.result);
     }
