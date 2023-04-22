@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import Promotion from "../../components/promotion/Promotion";
 import { categories } from "../../fakeCategories.js";
 import Category from "../../components/category/Category";
+import Footer from "../../components/Footer/Footer";
 const Home = () => {
   return (
     <div>
@@ -21,6 +22,7 @@ const Home = () => {
           <Category key={category.headerText} {...category} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
