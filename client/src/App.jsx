@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home/Home";
 import CreateUser from "./pages/User/CreateUser";
 import UserList from "./pages/User/UserList";
-import AllProducts from "./pages/All Products/AllProducts"
+import AllProducts from "./pages/All Products/AllProducts";
 
 const App = () => {
   return (

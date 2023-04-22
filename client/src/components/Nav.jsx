@@ -12,7 +12,9 @@ const Nav = () => {
       <Link to="/user" data-testid={TEST_ID.linkToUsers}>
         <li>Users</li>
       </Link>
-      <Link to="/products"><li>All Products</li></Link>
+      <Link to="/products">
+        <li>All Products</li>
+      </Link>
     </ul>
   );
 };
