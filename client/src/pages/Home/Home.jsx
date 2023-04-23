@@ -4,9 +4,11 @@ import Promotion from "../../components/promotion/Promotion";
 import { categories } from "../../fakeCategories.js";
 import Category from "../../components/category/Category";
 import Footer from "../../components/Footer/Footer";
+import NavButtons from "../../components/header/NavButtons";
 const Home = () => {
   return (
     <div>
+      <NavButtons />
       <Header />
       <Promotion />
       <h1 style={{ textAlign: "center" }}>Categories</h1>
