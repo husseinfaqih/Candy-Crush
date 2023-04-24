@@ -1,10 +1,12 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import Promotion from "../../components/promotion/Promotion";
-import { categories } from "../../fakeCategories.js";
-import Category from "../../components/category/Category";
+// import { categories } from "../../fakeCategories.js";
+
 import Footer from "../../components/Footer/Footer";
 import NavButtons from "../../components/header/NavButtons";
+
+import Categories from "../../components/category/Categories";
 const Home = () => {
   return (
     <div>
@@ -12,18 +14,7 @@ const Home = () => {
       <Header />
       <Promotion />
       <h1 style={{ textAlign: "center" }}>Categories</h1>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          backgroundColor: "#FEE588",
-        }}
-      >
-        {categories.map((category) => (
-          <Category key={category.headerText} {...category} />
-        ))}
-      </div>
+      <Categories />
       <Footer />
     </div>
   );
