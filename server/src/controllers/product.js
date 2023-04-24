@@ -5,7 +5,7 @@ import { logError } from "../util/logging.js";
 export const getProducts = async (req, res) => {
   try {
     const page = req.query.page || 0;
-    const productPerPage = 3;
+    const productPerPage = 5;
 
     const products = await Product.find()
       .skip(page * productPerPage)
