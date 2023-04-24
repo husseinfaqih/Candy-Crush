@@ -5,8 +5,8 @@ const ProductOverview = ({ product }) => {
   return (
     <div className="product-overview">
       <p>{product.productName}</p>
-      <p>{product.price}</p>
-      <p>{product.description}</p>
+      <p>${product.price}</p>
+      {/* <p>{product.description}</p> */}
       <img src={product.image} alt="" />
     </div>
   );

@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  background-color: #fee588;
+  width: 100vw;
+  height: 100vh;
+}
 .product-display-grid {
   display: flex;
   gap: 1em;

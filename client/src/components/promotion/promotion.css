@@ -3,6 +3,7 @@
   height: 400px;
   display: flex;
   background-color: #05e0dc;
+  position: relative;
 }
 
 .promotion-main-container {
