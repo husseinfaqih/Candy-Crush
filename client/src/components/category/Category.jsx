@@ -19,7 +19,7 @@ export default function Category({ imageUrl, headerText, descText }) {
 
 //to validate the props because of eSilent warning
 Category.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  headerText: PropTypes.string.isRequired,
-  descText: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };

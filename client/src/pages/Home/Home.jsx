@@ -1,23 +1,20 @@
 import React from "react";
 import Header from "../../components/header/Header";
 import Promotion from "../../components/promotion/Promotion";
-import { categories } from "../../fakeCategories.js";
-import Category from "../../components/category/Category";
+// import { categories } from "../../fakeCategories.js";
+
 import Footer from "../../components/Footer/Footer";
 import NavButtons from "../../components/header/NavButtons";
-import "../../index.css";
+
+import Categories from "../../components/category/Categories";
 const Home = () => {
   return (
     <div>
       <NavButtons />
       <Header />
       <Promotion />
-      <h1 className="categories-title">Categories</h1>
-      <div className="header-categories">
-        {categories.map((category) => (
-          <Category key={category.headerText} {...category} />
-        ))}
-      </div>
+      <h1 style={{ textAlign: "center" }}>Categories</h1>
+      <Categories />
       <Footer />
     </div>
   );

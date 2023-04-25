@@ -111,3 +111,10 @@
   top: 20%;
   right: 15%;
 }
+
+.header-search-suggestion-block {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  background-color: #05e0dc;
+}
