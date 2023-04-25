@@ -1,19 +1,23 @@
 import React from "react";
 
 const allCategories = [
-  "Gum",
-  "Hard Candy",
-  "Lollipops",
   "Cookies",
-  "Jelly Beans",
   "Candy Corn",
+  "Lollipops",
+  "Hard Candy",
+  "Vegetarian",
 ];
 const Categories = () => {
-  return allCategories.map((c) => (
-    <button key={c} style={{ margin: "5px" }}>
-      {c}
-    </button>
-  ));
+  return (
+    <div className="categories-div">
+      <h3>Categories</h3>
+      {allCategories.map((c) => (
+        <button key={c} className="category-button">
+          {c}
+        </button>
+      ))}
+    </div>
+  );
 };
 
 export default Categories;
