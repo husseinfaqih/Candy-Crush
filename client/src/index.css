@@ -4,7 +4,15 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
+a {
+  text-decoration: none;
+  margin: 8px;
+  color: #f095c4;
+  font-size: 22px;
+}
+a:hover {
+  color: white;
+}
 .product-display-grid {
   display: flex;
   gap: 1em;
