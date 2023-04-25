@@ -30,7 +30,17 @@ function useSearch(searchWord) {
     filteredData &&
       navigate("/searchResult", { state: { productsSearch: filteredData } });
   }
-  return [handleSearch];
+
+  function showSuggestion(word) {
+    const suggestions = products
+      .filter((item) => {
+        return item.productName.toLowerCase().includes(word.toLowerCase());
+      })
+      .map((suggestion) => suggestion.productName);
+
+    return suggestions;
+  }
+  return [handleSearch, showSuggestion];
 }
 
 useSearch.propTypes = {
