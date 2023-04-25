@@ -2,6 +2,7 @@ import React from "react";
 import Categories from "./Categories";
 import Price from "./Price";
 import Rating from "./Rating";
+import PropTypes from "prop-types";
 
 const SortAndFilter = () => {
   return (
@@ -23,6 +24,11 @@ const SortAndFilter = () => {
       {<Rating />}
     </div>
   );
+};
+
+SortAndFilter.propTypes = {
+  displayedProducts: PropTypes.array,
+  setDisplayedProducts: PropTypes.func,
 };
 
 export default SortAndFilter;
