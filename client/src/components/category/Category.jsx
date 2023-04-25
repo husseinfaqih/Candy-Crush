@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default function Category({ imageUrl, headerText, descText }) {
+export default function Category({ image, categoryName, description }) {
   const containerStyles = {
     position: "relative",
     width: "400px",
@@ -50,12 +50,14 @@ export default function Category({ imageUrl, headerText, descText }) {
   };
   return (
     <div style={containerStyles}>
-      <img src={imageUrl} alt="" style={imageStyles} />
+      <img src={image} alt="" style={imageStyles} />
       <div style={layerStyles}>
         <div style={textStyles}>
-          <h3 style={{ fontSize: "20px", color: " #3F3E3E" }}>{headerText}</h3>
+          <h3 style={{ fontSize: "20px", color: " #3F3E3E" }}>
+            {categoryName}
+          </h3>
           <span style={{ fontSize: "15px", color: " #3F3E3E" }}>
-            {descText}
+            {description}
           </span>
         </div>
       </div>
@@ -66,7 +68,7 @@ export default function Category({ imageUrl, headerText, descText }) {
 
 //to validate the props because of eSilent warning
 Category.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  headerText: PropTypes.string.isRequired,
-  descText: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  categoryName: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };

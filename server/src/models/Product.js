@@ -9,6 +9,8 @@ const productSchema = new mongoose.Schema(
     description: { type: String, required: true },
     type: { type: String, required: true },
     category: { type: String, required: true },
+    rate: { type: Number, required: true },
+    onSale: { type: Boolean, required: true },
   },
   { timestamps: true }
 );
