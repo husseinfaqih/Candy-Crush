@@ -4,11 +4,10 @@ body {
   width: 100vw;
   height: 100vh;
 }
-a {
+
+.nav-buttons {
   text-decoration: none;
-  margin: 8px;
-  font-size: 22px;
-}
-a:hover {
-  color: white;
+  margin: 5px;
+  font-size: 1.4rem;
+  color: #f095c4;
 }

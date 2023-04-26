@@ -43,3 +43,18 @@
   height: 400px;
   z-index: 10;
 }
+@media (max-width: 767px) {
+  .promotion {
+    height: 20vh;
+  }
+  .promotion-title {
+    font-size: 1.2rem;
+  }
+  .promotion-button {
+    width: 100px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* styles for tablets */
+}
