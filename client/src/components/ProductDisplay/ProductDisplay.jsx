@@ -33,7 +33,7 @@ const ProductDisplay = ({ displayedCategory }) => {
     setPage(0);
     setLoadingProducts(true);
     setHasMore(true);
-    performFetch();
+    if (!displayedCategory) performFetch();
   }, [displayedCategory]);
 
   useEffect(() => {
