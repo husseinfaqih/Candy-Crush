@@ -11,9 +11,13 @@ const ProductDisplay = () => {
   const [page, setPage] = useState(0);
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [hasMore, setHasMore] = useState(true);
+  // eslint-disable-next-line
+  const [sortBy, setSortBy] = useState("price");
+  // eslint-disable-next-line
+  const [sortOrder, setSortOrder] = useState("1");
 
   const { isLoading, error, performFetch } = useFetch(
-    `/product?page=${page}`,
+    `/product?page=${page}&sortBy=${sortBy}&sortOrder=${sortOrder}`,
     (response) => {
       if (response.result.length === 0 || error != null) {
         setHasMore(false);
