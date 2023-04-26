@@ -4,7 +4,12 @@ import { logError } from "../util/logging.js";
 //GET ALL PRODUCTS
 export const getProducts = async (req, res) => {
   try {
-    const products = await Product.find();
+    const page = req.query.page || 0;
+    const productPerPage = 4;
+
+    const products = await Product.find()
+      .skip(page * productPerPage)
+      .limit(productPerPage);
     res.status(200).json({ success: true, result: products });
   } catch (error) {
     logError(error);
@@ -41,5 +46,26 @@ export const createProduct = async (req, res) => {
       success: false,
       msg: "Unable to create product, try again later",
     });
+  }
+};
+
+//GET PRODUCTS CERTAIN CATEGORY
+export const getProductsByCategory = async (req, res) => {
+  try {
+    const page = req.query.page || 0;
+    const productPerPage = 4;
+
+    const category = req.params.category; // Get the category from the URL parameter
+
+    const products = await Product.find({ category: category }) // Find products of the specified category
+      .skip(page * productPerPage)
+      .limit(productPerPage);
+
+    res.status(200).json({ success: true, result: products });
+  } catch (error) {
+    logError(error);
+    res
+      .status(500)
+      .json({ success: false, msg: "Unable to get products, try again later" });
   }
 };

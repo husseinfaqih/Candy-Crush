@@ -104,3 +104,10 @@
 .donut-two {
   margin-top: 11%;
 }
+
+.header-search-suggestion-block {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  background-color: #05e0dc;
+}

@@ -5,11 +5,10 @@ import { Link } from "react-router-dom";
 
 function CategoryList() {
   const [categories, setCategories] = useState(null);
-  const [products, setProducts] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const { performFetch, cancelFetch } = useFetch("/product", (response) => {
-    setProducts(response.result);
+  const { performFetch, cancelFetch } = useFetch("/category", (response) => {
+    setCategories(response.result);
   });
 
   const clickArrow = () => {
@@ -20,11 +19,6 @@ function CategoryList() {
     performFetch();
     return cancelFetch;
   }, []);
-
-  useEffect(() => {
-    products &&
-      setCategories([...new Set(products.map((item) => item.category))]);
-  }, [products]);
 
   return (
     <menu className="header-category-list-block">
@@ -46,10 +40,17 @@ function CategoryList() {
               return (
                 <li
                   className="header-category-list-item"
-                  key={category}
-                  value={category}
+                  key={category._id}
+                  value={category.categoryName}
                 >
-                  <Link to="/"> {category}</Link>
+                  <Link
+                    to={{
+                      pathname: "/products",
+                      state: { categoryLink: category.categoryName },
+                    }}
+                  >
+                    {category.categoryName}
+                  </Link>
                 </li>
               );
             })}

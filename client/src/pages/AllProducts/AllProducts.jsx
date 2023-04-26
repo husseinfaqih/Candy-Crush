@@ -6,19 +6,19 @@ import Footer from "../../components/Footer/Footer";
 import NavButtons from "../../components/header/NavButtons";
 
 const AllProduct = () => {
-  const [displayedProducts, setDisplayedProducts] = useState([]);
+  const [displayedCategory, setDisplayedCategory] = useState(null);
   return (
     <div>
       <NavButtons />
       <Header />
       <h1>This is the All Product Page</h1>
       <SortAndFilter
-        displayedProducts={displayedProducts}
-        setDisplayedProducts={setDisplayedProducts}
+        displayedCategory={displayedCategory}
+        setDisplayedCategory={setDisplayedCategory}
       />
       <ProductDisplay
-        displayedProducts={displayedProducts}
-        setDisplayedProducts={setDisplayedProducts}
+        displayedCategory={displayedCategory}
+        setDisplayedCategory={setDisplayedCategory}
       />
       <Footer />
     </div>

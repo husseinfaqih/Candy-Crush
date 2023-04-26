@@ -3,8 +3,9 @@ import Categories from "./Categories";
 import Price from "./Price";
 import Rating from "./Rating";
 import PropTypes from "prop-types";
+import "./sortAndFilter.css";
 
-const SortAndFilter = () => {
+const SortAndFilter = ({ displayedCategory, setDisplayedCategory }) => {
   return (
     <div
       className="sortAndFilter"
@@ -17,7 +18,12 @@ const SortAndFilter = () => {
       }}
     >
       <h3 style={{ margin: "2px" }}>Categories</h3>
-      {<Categories />}
+      {
+        <Categories
+          displayedCategory={displayedCategory}
+          setDisplayedCategory={setDisplayedCategory}
+        />
+      }
       <h3 style={{ margin: "2px" }}>Price Sort</h3>
       {<Price />}
       <h3 style={{ margin: "2px" }}>Rating Sort</h3>
@@ -27,8 +33,8 @@ const SortAndFilter = () => {
 };
 
 SortAndFilter.propTypes = {
-  displayedProducts: PropTypes.array,
-  setDisplayedProducts: PropTypes.func,
+  displayedCategory: PropTypes.string,
+  setDisplayedCategory: PropTypes.func,
 };
 
 export default SortAndFilter;
