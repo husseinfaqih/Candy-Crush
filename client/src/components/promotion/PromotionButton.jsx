@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 function PromotionButton({ togglePopup }) {
   return (
     <button className="promotion-button" onClick={togglePopup}>
-      shop deals
+      SHOP DEALS
     </button>
   );
 }
