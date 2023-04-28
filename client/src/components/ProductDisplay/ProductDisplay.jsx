@@ -23,25 +23,26 @@ const ProductDisplay = ({
     (response) => {
       if (response.result.length === 0 || error != null) {
         setHasMore(false);
+        setPage(0);
       } else {
         setProducts((prevProducts) => [...prevProducts, ...response.result]);
+        setHasMore(true);
       }
       setLoadingProducts(false);
     }
   );
 
   useEffect(() => {
-    if (page === 0) setProducts([]);
-    performFetch();
+    if (hasMore) performFetch();
   }, [page]);
 
   useEffect(() => {
-    setProducts([]);
-    setPage(0);
-    setHasMore(true);
     if (filterQueryChanged === true) {
       performFetch();
       setFilterQueryChanged(false);
+      setProducts([]);
+      setPage(0);
+      setHasMore(true);
     }
   }, [filterQuery]);
 
