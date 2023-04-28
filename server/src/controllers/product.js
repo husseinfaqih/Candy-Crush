@@ -49,15 +49,31 @@ export const createProduct = async (req, res) => {
   }
 };
 
-//GET PRODUCTS CERTAIN CATEGORY
+//GET PRODUCTS CERTAIN CATEGORY WITH FILTERING
 export const getProductsByCategory = async (req, res) => {
   try {
     const page = req.query.page || 0;
     const productPerPage = 4;
 
-    const category = req.params.category; // Get the category from the URL parameter
+    const category = req.params.category;
 
-    const products = await Product.find({ category: category }) // Find products of the specified category
+    const minPrice = req.query.minPrice || 0;
+    const maxPrice = req.query.maxPrice || Infinity;
+    const onSale = req.query.onSale || false;
+
+    const filter = {
+      price: { $gte: minPrice, $lte: maxPrice },
+    };
+
+    if (onSale === "true") {
+      filter.onSale = { $in: [true] };
+    }
+
+    if (category !== "all") {
+      filter.category = category;
+    }
+
+    const products = await Product.find(filter)
       .skip(page * productPerPage)
       .limit(productPerPage);
 

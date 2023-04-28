@@ -4,8 +4,16 @@ import Price from "./Price";
 import Rating from "./Rating";
 import PropTypes from "prop-types";
 import "./sortAndFilter.css";
+import PriceSlider from "./PriceSlider";
+import ShowOnSaleCheckbox from "./ShowOnSaleCheckbox";
+import ResetButton from "./ResetButton";
 
-const SortAndFilter = ({ displayedCategory, setDisplayedCategory }) => {
+const SortAndFilter = ({
+  filterQuery,
+  setFilterQuery,
+  filterQueryChanged,
+  setFilterQueryChanged,
+}) => {
   return (
     <div
       className="sortAndFilter"
@@ -20,8 +28,32 @@ const SortAndFilter = ({ displayedCategory, setDisplayedCategory }) => {
       <h3 style={{ margin: "2px" }}>Categories</h3>
       {
         <Categories
-          displayedCategory={displayedCategory}
-          setDisplayedCategory={setDisplayedCategory}
+          filterQuery={filterQuery}
+          setFilterQuery={setFilterQuery}
+          filterQueryChanged={filterQueryChanged}
+          setFilterQueryChanged={setFilterQueryChanged}
+        />
+      }
+      <h3 style={{ margin: "2px" }}>Prices filter</h3>
+      {
+        <PriceSlider
+          filterQuery={filterQuery}
+          setFilterQuery={setFilterQuery}
+          setFilterQueryChanged={setFilterQueryChanged}
+        />
+      }
+      <h3 style={{ margin: "2px" }}>Show products on sale</h3>
+      {
+        <ShowOnSaleCheckbox
+          filterQuery={filterQuery}
+          setFilterQuery={setFilterQuery}
+          setFilterQueryChanged={setFilterQueryChanged}
+        />
+      }
+      {
+        <ResetButton
+          setFilterQuery={setFilterQuery}
+          setFilterQueryChanged={setFilterQueryChanged}
         />
       }
       <h3 style={{ margin: "2px" }}>Price Sort</h3>
@@ -33,8 +65,10 @@ const SortAndFilter = ({ displayedCategory, setDisplayedCategory }) => {
 };
 
 SortAndFilter.propTypes = {
-  displayedCategory: PropTypes.string,
-  setDisplayedCategory: PropTypes.func,
+  filterQuery: PropTypes.object,
+  setFilterQuery: PropTypes.func,
+  filterQueryChanged: PropTypes.bool.isRequired,
+  setFilterQueryChanged: PropTypes.func.isRequired,
 };
 
 export default SortAndFilter;

@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import PropTypes from "prop-types";
 
-const Categories = ({ displayedCategory, setDisplayedCategory }) => {
+const Categories = ({
+  filterQuery,
+  setFilterQuery,
+  filterQueryChanged,
+  setFilterQueryChanged,
+}) => {
   const [allCategories, setAllCategories] = useState(null);
   const [active, setActive] = useState("");
 
@@ -16,19 +21,23 @@ const Categories = ({ displayedCategory, setDisplayedCategory }) => {
   }, []);
 
   const clickCategory = (event) => {
-    if (displayedCategory && displayedCategory !== event.target.textContent) {
-      setDisplayedCategory(event.target.textContent);
-      setActive(event.target.textContent);
-      return;
-    }
-    if (displayedCategory) {
-      setDisplayedCategory(null);
+    if (filterQuery.categories === event.target.innerText) {
+      setFilterQuery({ ...filterQuery, categories: "all" });
       setActive("");
+    } else if (filterQuery.categories === "all") {
+      setFilterQuery({ ...filterQuery, categories: event.target.innerText });
+      setActive(event.target.innerText);
     } else {
-      setDisplayedCategory(event.target.textContent);
-      setActive(event.target.textContent);
+      setFilterQuery({ ...filterQuery, categories: event.target.innerText });
+      setActive(event.target.innerText);
     }
+    setFilterQueryChanged(true);
   };
+
+  useEffect(() => {
+    if (filterQuery.categories === "all") setActive("");
+  }, [filterQueryChanged]);
+
   return (
     <>
       {allCategories &&
@@ -47,8 +56,10 @@ const Categories = ({ displayedCategory, setDisplayedCategory }) => {
 };
 
 Categories.propTypes = {
-  displayedCategory: PropTypes.string,
-  setDisplayedCategory: PropTypes.func,
+  filterQuery: PropTypes.object,
+  setFilterQuery: PropTypes.func,
+  filterQueryChanged: PropTypes.bool.isRequired,
+  setFilterQueryChanged: PropTypes.func.isRequired,
 };
 
 export default Categories;

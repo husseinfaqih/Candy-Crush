@@ -6,19 +6,28 @@ import Footer from "../../components/Footer/Footer";
 import NavButtons from "../../components/header/NavButtons";
 
 const AllProduct = () => {
-  const [displayedCategory, setDisplayedCategory] = useState(null);
+  const [filterQuery, setFilterQuery] = useState({
+    categories: "all",
+    minPrice: 0,
+    maxPrice: 200,
+    onSale: false,
+  });
+  const [filterQueryChanged, setFilterQueryChanged] = useState(false);
   return (
     <div>
       <NavButtons />
       <Header />
       <h1>This is the All Product Page</h1>
       <SortAndFilter
-        displayedCategory={displayedCategory}
-        setDisplayedCategory={setDisplayedCategory}
+        filterQuery={filterQuery}
+        setFilterQuery={setFilterQuery}
+        filterQueryChanged={filterQueryChanged}
+        setFilterQueryChanged={setFilterQueryChanged}
       />
       <ProductDisplay
-        displayedCategory={displayedCategory}
-        setDisplayedCategory={setDisplayedCategory}
+        filterQuery={filterQuery}
+        filterQueryChanged={filterQueryChanged}
+        setFilterQueryChanged={setFilterQueryChanged}
       />
       <Footer />
     </div>

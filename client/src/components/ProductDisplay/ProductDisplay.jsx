@@ -6,15 +6,17 @@ import Basket from "./Basket";
 import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 
-const ProductDisplay = ({ displayedCategory }) => {
+const ProductDisplay = ({
+  filterQuery,
+  filterQueryChanged,
+  setFilterQueryChanged,
+}) => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [hasMore, setHasMore] = useState(true);
 
-  const serverRequest = displayedCategory
-    ? `/product/${displayedCategory}?page=${page}`
-    : `/product?page=${page}`;
+  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&page=${page}`;
 
   const { isLoading, error, performFetch } = useFetch(
     serverRequest,
@@ -29,23 +31,27 @@ const ProductDisplay = ({ displayedCategory }) => {
   );
 
   useEffect(() => {
-    setProducts([]);
-    setPage(0);
-    setLoadingProducts(true);
-    setHasMore(true);
-    if (!displayedCategory) performFetch();
-  }, [displayedCategory]);
-
-  useEffect(() => {
+    if (page === 0) setProducts([]);
     performFetch();
   }, [page]);
+
+  useEffect(() => {
+    setProducts([]);
+    setPage(0);
+    setHasMore(true);
+    if (filterQueryChanged === true) {
+      performFetch();
+      setFilterQueryChanged(false);
+    }
+  }, [filterQuery]);
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop;
     const windowInnerHeight = window.innerHeight;
+    const bottomOfPage = scrollTop + windowInnerHeight;
 
-    if (windowInnerHeight + scrollTop + 1 >= scrollHeight && hasMore) {
+    if (bottomOfPage >= scrollHeight * 0.7 && hasMore) {
       setPage((prev) => prev + 1);
       setLoadingProducts(true);
     }
@@ -88,7 +94,9 @@ const ProductDisplay = ({ displayedCategory }) => {
 };
 
 ProductDisplay.propTypes = {
-  displayedCategory: PropTypes.string,
+  filterQuery: PropTypes.object,
+  filterQueryChanged: PropTypes.bool.isRequired,
+  setFilterQueryChanged: PropTypes.func.isRequired,
 };
 
 export default ProductDisplay;
