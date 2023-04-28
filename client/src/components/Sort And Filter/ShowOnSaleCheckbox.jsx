@@ -12,7 +12,7 @@ const ShowOnSaleCheckbox = ({
   };
 
   return (
-    <div>
+    <div className="on-sale-checkbox">
       <label>
         <input
           type="checkbox"

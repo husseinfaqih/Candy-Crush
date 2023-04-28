@@ -1,40 +1,41 @@
 import React from "react";
-import Categories from "./Categories";
-import Price from "./Price";
-import Rating from "./Rating";
 import PropTypes from "prop-types";
-import "./sortAndFilter.css";
+import Categories from "./Categories";
+import Sort from "./Sort";
 import PriceSlider from "./PriceSlider";
 import ShowOnSaleCheckbox from "./ShowOnSaleCheckbox";
 import ResetButton from "./ResetButton";
 
 const SortAndFilter = ({
+  onLowestRatedClick,
+  onHighestRatedClick,
+  onLowestPriceClick,
+  onHighestPriceClick,
   filterQuery,
   setFilterQuery,
   filterQueryChanged,
   setFilterQueryChanged,
 }) => {
   return (
-    <div
-      className="sortAndFilter"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "15vw",
-        backgroundColor: "gray",
-        float: "left",
-      }}
-    >
-      <h3 style={{ margin: "2px" }}>Categories</h3>
+    <div className="sortAndFilter">
+      <div>
+        {
+          <Categories
+            filterQuery={filterQuery}
+            setFilterQuery={setFilterQuery}
+            filterQueryChanged={filterQueryChanged}
+            setFilterQueryChanged={setFilterQueryChanged}
+          />
+        }
+      </div>
       {
-        <Categories
-          filterQuery={filterQuery}
-          setFilterQuery={setFilterQuery}
-          filterQueryChanged={filterQueryChanged}
-          setFilterQueryChanged={setFilterQueryChanged}
+        <Sort
+          onLowestPriceClick={onLowestPriceClick}
+          onHighestPriceClick={onHighestPriceClick}
+          onLowestRatedClick={onLowestRatedClick}
+          onHighestRatedClick={onHighestRatedClick}
         />
       }
-      <h3 style={{ margin: "2px" }}>Prices filter</h3>
       {
         <PriceSlider
           filterQuery={filterQuery}
@@ -42,7 +43,6 @@ const SortAndFilter = ({
           setFilterQueryChanged={setFilterQueryChanged}
         />
       }
-      <h3 style={{ margin: "2px" }}>Show products on sale</h3>
       {
         <ShowOnSaleCheckbox
           filterQuery={filterQuery}
@@ -56,15 +56,15 @@ const SortAndFilter = ({
           setFilterQueryChanged={setFilterQueryChanged}
         />
       }
-      <h3 style={{ margin: "2px" }}>Price Sort</h3>
-      {<Price />}
-      <h3 style={{ margin: "2px" }}>Rating Sort</h3>
-      {<Rating />}
     </div>
   );
 };
 
 SortAndFilter.propTypes = {
+  onLowestRatedClick: PropTypes.func.isRequired,
+  onHighestRatedClick: PropTypes.func.isRequired,
+  onLowestPriceClick: PropTypes.func.isRequired,
+  onHighestPriceClick: PropTypes.func.isRequired,
   filterQuery: PropTypes.object,
   setFilterQuery: PropTypes.func,
   filterQueryChanged: PropTypes.bool.isRequired,

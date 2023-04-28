@@ -1,28 +1,13 @@
-.product-display-grid {
-  display: flex;
-  gap: 1em;
-  flex-wrap: wrap;
-}
-
-.product-display-component {
-  width: 18em;
-  border: 1px solid #ccc;
-  padding: 1em;
-  text-align: center;
-}
-
-.product-overview p {
+body {
   margin: 0;
-  font-size: 1.2em;
+  background-color: #fee588;
+  width: 100vw;
+  height: 100vh;
 }
 
-.product-overview img {
-  width: 100%;
-  margin: 1em 0;
-}
-
-.product-overview div {
-  display: flex;
-  justify-content: center;
-  margin: 1em 0;
+.nav-buttons {
+  text-decoration: none;
+  margin: 5px;
+  font-size: 1.4rem;
+  color: #f095c4;
 }

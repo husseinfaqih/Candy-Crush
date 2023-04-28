@@ -5,9 +5,15 @@ import { logError } from "../util/logging.js";
 export const getProducts = async (req, res) => {
   try {
     const page = req.query.page || 0;
-    const productPerPage = 4;
+    const productPerPage = 5;
+
+    const sortBy = req.query.sortBy || "productName";
+    const sortOrder = req.query.sortOrder === "-1" ? -1 : 1;
+    const sortObj = {};
+    sortObj[sortBy] = sortOrder;
 
     const products = await Product.find()
+      .sort(sortObj)
       .skip(page * productPerPage)
       .limit(productPerPage);
     res.status(200).json({ success: true, result: products });
@@ -53,9 +59,14 @@ export const createProduct = async (req, res) => {
 export const getProductsByCategory = async (req, res) => {
   try {
     const page = req.query.page || 0;
-    const productPerPage = 4;
+    const productPerPage = 5;
 
     const category = req.params.category;
+
+    const sortBy = req.query.sortBy || "productName";
+    const sortOrder = req.query.sortOrder === "-1" ? -1 : 1;
+    const sortObj = {};
+    sortObj[sortBy] = sortOrder;
 
     const minPrice = req.query.minPrice || 0;
     const maxPrice = req.query.maxPrice || Infinity;
@@ -74,6 +85,7 @@ export const getProductsByCategory = async (req, res) => {
     }
 
     const products = await Product.find(filter)
+      .sort(sortObj)
       .skip(page * productPerPage)
       .limit(productPerPage);
 

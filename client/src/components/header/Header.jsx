@@ -18,9 +18,11 @@ function Header() {
         <SearchBar />
         <CategoryList />
       </div>
-      <LoginButton />
-      <FavoriteButton />
-      <CartButton />
+      <div className="header-buttons">
+        <LoginButton />
+        <FavoriteButton />
+        <CartButton />
+      </div>
       <DonutOne />
       <DonutTwo />
       <MainTitle />

@@ -12,7 +12,11 @@ const ResetButton = ({ setFilterQuery, setFilterQueryChanged }) => {
     setFilterQueryChanged(true);
   };
 
-  return <button onClick={handleResetClick}>Reset Filters</button>;
+  return (
+    <button className="filter-reset-button" onClick={handleResetClick}>
+      Reset Filters
+    </button>
+  );
 };
 
 ResetButton.propTypes = {

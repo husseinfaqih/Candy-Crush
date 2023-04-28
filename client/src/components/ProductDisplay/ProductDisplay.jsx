@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import ProductOverview from "./ProductOverview";
 import Rating from "./Rating";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
-import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 
 const ProductDisplay = ({
+  sortBy,
+  sortOrder,
   filterQuery,
   filterQueryChanged,
   setFilterQueryChanged,
@@ -16,7 +18,7 @@ const ProductDisplay = ({
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [hasMore, setHasMore] = useState(true);
 
-  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&page=${page}`;
+  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&page=${page}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
 
   const { isLoading, error, performFetch } = useFetch(
     serverRequest,
@@ -34,7 +36,14 @@ const ProductDisplay = ({
 
   useEffect(() => {
     if (hasMore) performFetch();
-  }, [page]);
+  }, [page, sortBy, sortOrder]);
+
+  useEffect(() => {
+    setProducts([]);
+    setPage(0);
+    setHasMore(true);
+    setLoadingProducts(true);
+  }, [sortBy, sortOrder]);
 
   useEffect(() => {
     if (filterQueryChanged === true) {
@@ -95,6 +104,8 @@ const ProductDisplay = ({
 };
 
 ProductDisplay.propTypes = {
+  sortBy: PropTypes.string.isRequired,
+  sortOrder: PropTypes.string.isRequired,
   filterQuery: PropTypes.object,
   filterQueryChanged: PropTypes.bool.isRequired,
   setFilterQueryChanged: PropTypes.func.isRequired,

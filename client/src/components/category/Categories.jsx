@@ -12,14 +12,7 @@ export default function Categories() {
     performFetch();
   }, []);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-between",
-        backgroundColor: "#FEE588",
-      }}
-    >
+    <div className="category-div">
       {categories &&
         categories.map((category) => (
           <Category key={category._id} {...category} />

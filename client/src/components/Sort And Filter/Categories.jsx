@@ -39,19 +39,23 @@ const Categories = ({
   }, [filterQueryChanged]);
 
   return (
-    <>
+    <div className="categories-div">
+      <h3>Categories</h3>
       {allCategories &&
         allCategories.map((c) => (
           <button
             key={c._id}
-            style={{ margin: "5px", cursor: "pointer" }}
             onClick={clickCategory}
-            className={active === c.categoryName ? "active" : ""}
+            className={
+              active === c.categoryName
+                ? "active category-button"
+                : "category-button"
+            }
           >
             {c.categoryName}
           </button>
         ))}
-    </>
+    </div>
   );
 };
 

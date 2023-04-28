@@ -24,7 +24,7 @@ const PriceSlider = ({
   }, [minValue, maxValue]);
 
   return (
-    <div>
+    <div className="price-slider">
       <div>
         <label htmlFor="min">Min:</label>
         <input
