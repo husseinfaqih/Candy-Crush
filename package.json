@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "concurrently": "^6.4.0",
-    "react-icons": "^4.8.0"
+    "react-icons": "^4.8.0",
+    "react-slider": "^2.0.4"
   }
 }
