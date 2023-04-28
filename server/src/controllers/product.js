@@ -7,8 +7,8 @@ export const getProducts = async (req, res) => {
     const page = req.query.page || 0;
     const productPerPage = 4;
 
-    const sortBy = req.query.sortBy || "rate";
-    const sortOrder = req.query.sortOrder === "1" ? 1 : -1;
+    const sortBy = req.query.sortBy || "productName";
+    const sortOrder = req.query.sortOrder === "-1" ? -1 : 1;
     const sortObj = {};
     sortObj[sortBy] = sortOrder;
 
