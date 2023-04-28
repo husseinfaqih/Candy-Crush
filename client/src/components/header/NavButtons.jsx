@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 const NavButtons = () => {
   return (
     <>
-      <Link to="/" style={{ margin: "5px" }}>
+      <Link to="/" className="nav-buttons">
         Home
       </Link>
-      <Link to="/products">All Products</Link>
+      <Link to="/products" className="nav-buttons">
+        All Products
+      </Link>
     </>
   );
 };

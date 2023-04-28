@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Categories from "./Categories";
-import Price from "./Price";
-import Rating from "./Rating";
+import Sort from "./Sort";
 
 const SortAndFilter = ({
   onLowestRatedClick,
@@ -11,28 +10,12 @@ const SortAndFilter = ({
   onHighestPriceClick,
 }) => {
   return (
-    <div
-      className="sortAndFilter"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "15vw",
-        backgroundColor: "gray",
-        float: "left",
-      }}
-    >
-      <h3 style={{ margin: "2px" }}>Categories</h3>
-      {<Categories />}
-      <h3 style={{ margin: "2px" }}>Price Sort</h3>
+    <div className="sortAndFilter">
+      <div>{<Categories />}</div>
       {
-        <Price
+        <Sort
           onLowestPriceClick={onLowestPriceClick}
           onHighestPriceClick={onHighestPriceClick}
-        />
-      }
-      <h3 style={{ margin: "2px" }}>Rating Sort</h3>
-      {
-        <Rating
           onLowestRatedClick={onLowestRatedClick}
           onHighestRatedClick={onHighestRatedClick}
         />

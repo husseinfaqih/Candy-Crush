@@ -3,14 +3,35 @@
   height: 400px;
   display: flex;
   background-color: #05e0dc;
+  position: relative;
 }
 
 .promotion-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 70%;
 }
 
 .promotion-image {
-  width: 30%;
+  width: 30vw;
+}
+.promotion-title {
+  color: white;
+  width: 40vw;
+  font-size: 3.7rem;
+}
+
+.promotion-button {
+  color: white;
+  background-color: #f095c4;
+  border: none;
+  font-size: 15px;
+  width: 130px;
+  height: 45px;
+}
+.promotion-button:hover {
+  cursor: pointer;
 }
 
 .promotion-popup {
@@ -21,4 +42,19 @@
   width: 400px;
   height: 400px;
   z-index: 10;
+}
+@media (max-width: 767px) {
+  .promotion {
+    height: 20vh;
+  }
+  .promotion-title {
+    font-size: 1.2rem;
+  }
+  .promotion-button {
+    width: 100px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* styles for tablets */
 }
