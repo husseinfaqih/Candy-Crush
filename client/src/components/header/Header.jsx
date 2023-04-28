@@ -2,9 +2,9 @@ import React from "react";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import CategoryList from "./CategoryList";
-import LoginButton from "./LoginButton";
-import FavoriteButton from "./FavoriteButton";
-import CartButton from "./CartButton";
+// import LoginButton from "./LoginButton";
+// import FavoriteButton from "./FavoriteButton";
+// import CartButton from "./CartButton";
 import "./header.css";
 import MainTitle from "./MainTitle";
 import DonutOne from "./DonutOne";
@@ -19,9 +19,9 @@ function Header() {
         <CategoryList />
       </div>
       <div className="header-buttons">
-        <LoginButton />
+        {/* <LoginButton />
         <FavoriteButton />
-        <CartButton />
+        <CartButton /> */}
       </div>
       <DonutOne />
       <DonutTwo />
