@@ -9,7 +9,6 @@ const Sort = ({
 }) => {
   const sortingOptions = [
     { label: "IN STOCK", onClick: null },
-    { label: "ON SALE", onClick: null },
     { label: "BEST SELLING", onClick: null },
     { label: "RATE/ HIGH TO LOW", onClick: onHighestRatedClick },
     { label: "RATE/ LOW TO HIGH", onClick: onLowestRatedClick },

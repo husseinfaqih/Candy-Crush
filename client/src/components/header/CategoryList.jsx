@@ -43,7 +43,14 @@ function CategoryList() {
                   key={category._id}
                   value={category.categoryName}
                 >
-                  <Link to="/"> {category.categoryName}</Link>
+                  <Link
+                    to={{
+                      pathname: "/products",
+                      state: { categoryLink: category.categoryName },
+                    }}
+                  >
+                    {category.categoryName}
+                  </Link>
                 </li>
               );
             })}
