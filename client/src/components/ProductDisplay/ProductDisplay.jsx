@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ProductOverview from "./ProductOverview";
 import Rating from "./Rating";
 import Favorite from "./Favorite";
@@ -6,14 +7,14 @@ import Basket from "./Basket";
 import useFetch from "../../hooks/useFetch";
 import { useState, useEffect } from "react";
 
-const ProductDisplay = () => {
+const ProductDisplay = ({ sortBy, sortOrder }) => {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(0);
   const [loadingProducts, setLoadingProducts] = useState(true);
   const [hasMore, setHasMore] = useState(true);
 
   const { isLoading, error, performFetch } = useFetch(
-    `/product?page=${page}`,
+    `/product?page=${page}&sortBy=${sortBy}&sortOrder=${sortOrder}`,
     (response) => {
       if (response.result.length === 0 || error != null) {
         setHasMore(false);
@@ -26,7 +27,14 @@ const ProductDisplay = () => {
 
   useEffect(() => {
     performFetch();
-  }, [page]);
+  }, [page, sortBy, sortOrder]);
+
+  useEffect(() => {
+    setProducts([]);
+    setPage(0);
+    setHasMore(true);
+    setLoadingProducts(true);
+  }, [sortBy, sortOrder]);
 
   const handleScroll = () => {
     const scrollHeight = document.documentElement.scrollHeight;
@@ -72,6 +80,11 @@ const ProductDisplay = () => {
   }
 
   return <div>{content}</div>;
+};
+
+ProductDisplay.propTypes = {
+  sortBy: PropTypes.string.isRequired,
+  sortOrder: PropTypes.string.isRequired, // Add this line for sortOrder validation
 };
 
 export default ProductDisplay;
