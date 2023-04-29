@@ -58,9 +58,6 @@ export const createProduct = async (req, res) => {
 //GET PRODUCTS CERTAIN CATEGORY WITH FILTERING
 export const getProductsByCategory = async (req, res) => {
   try {
-    const page = req.query.page || 0;
-    const productPerPage = 5;
-
     const category = req.params.category;
 
     const sortBy = req.query.sortBy || "productName";
@@ -84,10 +81,7 @@ export const getProductsByCategory = async (req, res) => {
       filter.category = category;
     }
 
-    const products = await Product.find(filter)
-      .sort(sortObj)
-      .skip(page * productPerPage)
-      .limit(productPerPage);
+    const products = await Product.find(filter).sort(sortObj);
 
     res.status(200).json({ success: true, result: products });
   } catch (error) {

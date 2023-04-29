@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import PropTypes from "prop-types";
-import ProductOverview from "./ProductOverview";
 import Rating from "./Rating";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
 import useFetch from "../../hooks/useFetch";
+
+const ProductOverview = lazy(() => import("./ProductOverview"));
 
 const ProductDisplay = ({
   sortBy,
@@ -14,34 +15,18 @@ const ProductDisplay = ({
   setFilterQueryChanged,
 }) => {
   const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(0);
   const [loadingProducts, setLoadingProducts] = useState(true);
-  const [hasMore, setHasMore] = useState(true);
 
-  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&page=${page}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
 
-  const { isLoading, error, performFetch } = useFetch(
-    serverRequest,
-    (response) => {
-      if (response.result.length === 0 || error != null) {
-        setHasMore(false);
-        setPage(0);
-      } else {
-        setProducts((prevProducts) => [...prevProducts, ...response.result]);
-        setHasMore(true);
-      }
-      setLoadingProducts(false);
-    }
-  );
+  const { error, performFetch } = useFetch(serverRequest, (response) => {
+    setProducts(response.result);
+    setLoadingProducts(false);
+  });
 
   useEffect(() => {
-    if (hasMore) performFetch();
-  }, [page, sortBy, sortOrder]);
-
-  useEffect(() => {
+    performFetch();
     setProducts([]);
-    setPage(0);
-    setHasMore(true);
     setLoadingProducts(true);
   }, [sortBy, sortOrder]);
 
@@ -50,37 +35,13 @@ const ProductDisplay = ({
       performFetch();
       setFilterQueryChanged(false);
       setProducts([]);
-      setPage(0);
-      setHasMore(true);
+      setLoadingProducts(true);
     }
   }, [filterQuery]);
 
-  const handleScroll = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollTop = document.documentElement.scrollTop;
-    const windowInnerHeight = window.innerHeight;
-    const bottomOfPage = scrollTop + windowInnerHeight;
-
-    if (bottomOfPage >= scrollHeight * 0.7 && hasMore) {
-      setPage((prev) => prev + 1);
-      setLoadingProducts(true);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasMore]);
-
-  let content = null;
-
-  if (isLoading && products.length === 0) {
-    content = <div>loading...</div>;
-  } else if (error != null) {
-    content = <div>Error: {error.toString()}</div>;
-  } else {
-    content = (
-      <>
+  return (
+    <div>
+      <Suspense fallback={<div>Loading Product Overview...</div>}>
         <div className="product-display-grid">
           {products &&
             products.map((product) => {
@@ -94,13 +55,11 @@ const ProductDisplay = ({
               );
             })}
         </div>
-        {loadingProducts && <h1>Loading Products</h1>}
-        {!hasMore && <h1>No more products to fetch</h1>}
-      </>
-    );
-  }
-
-  return <div>{content}</div>;
+      </Suspense>
+      {loadingProducts && <h1>Loading Products</h1>}
+      {error && <div>Error: {error.toString()}</div>}
+    </div>
+  );
 };
 
 ProductDisplay.propTypes = {
