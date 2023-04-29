@@ -68,10 +68,15 @@ export const getProductsByCategory = async (req, res) => {
     const minPrice = req.query.minPrice || 0;
     const maxPrice = req.query.maxPrice || Infinity;
     const onSale = req.query.onSale || false;
+    const inStock = req.query.inStock || false;
 
     const filter = {
       price: { $gte: minPrice, $lte: maxPrice },
     };
+
+    if (inStock === "true") {
+      filter.levelOfInventory = { $gt: 0 };
+    }
 
     if (onSale === "true") {
       filter.onSale = { $in: [true] };

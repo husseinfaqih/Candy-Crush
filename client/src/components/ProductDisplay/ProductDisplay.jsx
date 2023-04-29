@@ -17,7 +17,7 @@ const ProductDisplay = ({
   const [products, setProducts] = useState([]);
   const [loadingProducts, setLoadingProducts] = useState(true);
 
-  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
+  const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&inStock=${filterQuery.inStock}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
 
   const { error, performFetch } = useFetch(serverRequest, (response) => {
     setProducts(response.result);
@@ -25,16 +25,16 @@ const ProductDisplay = ({
   });
 
   useEffect(() => {
-    performFetch();
     setProducts([]);
+    performFetch();
     setLoadingProducts(true);
   }, [sortBy, sortOrder]);
 
   useEffect(() => {
     if (filterQueryChanged === true) {
+      setProducts([]);
       performFetch();
       setFilterQueryChanged(false);
-      setProducts([]);
       setLoadingProducts(true);
     }
   }, [filterQuery]);
