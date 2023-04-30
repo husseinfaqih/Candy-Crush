@@ -45,8 +45,7 @@ function CategoryList() {
                 >
                   <Link
                     to={{
-                      pathname: "/products",
-                      state: { categoryLink: category.categoryName },
+                      pathname: `/products/${category.categoryName}`,
                     }}
                   >
                     {category.categoryName}

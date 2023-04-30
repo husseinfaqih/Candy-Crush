@@ -20,6 +20,10 @@ const Categories = ({
     return cancelFetch;
   }, []);
 
+  useEffect(() => {
+    if (filterQuery.categories !== "all") setActive(filterQuery.categories);
+  }, [active]);
+
   const clickCategory = (event) => {
     if (filterQuery.categories === event.target.innerText) {
       setFilterQuery({ ...filterQuery, categories: "all" });

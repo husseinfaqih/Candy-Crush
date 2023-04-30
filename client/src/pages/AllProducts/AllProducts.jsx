@@ -5,14 +5,17 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import NavButtons from "../../components/header/NavButtons";
 import "./allProducts.css";
+import { useParams } from "react-router-dom";
 
 const AllProduct = () => {
   const [sortBy, setSortBy] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [filterQueryChanged, setFilterQueryChanged] = useState(false);
   const [sortActive, setSortActive] = useState("");
+  const { category } = useParams();
+
   const [filterQuery, setFilterQuery] = useState({
-    categories: "all",
+    categories: category ? category : "all",
     minPrice: 0,
     maxPrice: 200,
     onSale: false,

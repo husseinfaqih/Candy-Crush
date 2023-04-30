@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./categories.css";
+import { Link } from "react-router-dom";
 
 export default function Category({ image, categoryName, description }) {
+  const link = `/products/${categoryName}`;
   return (
     <div className="categories-container">
       <img src={image} alt="" className="categories-image" />
@@ -12,7 +14,10 @@ export default function Category({ image, categoryName, description }) {
           <span className="categories-description">{description}</span>
         </div>
       </div>
-      <button className="categories-button">SHOP NOW</button>
+
+      <Link to={link}>
+        <button className="categories-button"> SHOP NOW </button>
+      </Link>
     </div>
   );
 }
