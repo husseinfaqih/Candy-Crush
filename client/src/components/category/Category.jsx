@@ -22,7 +22,6 @@ export default function Category({ image, categoryName, description }) {
   );
 }
 
-//to validate the props because of eSilent warning
 Category.propTypes = {
   image: PropTypes.string.isRequired,
   categoryName: PropTypes.string.isRequired,
