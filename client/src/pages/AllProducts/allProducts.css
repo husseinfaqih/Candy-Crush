@@ -41,6 +41,7 @@
   padding: 10px;
   background: none;
   border: 3px solid #f19cbd;
+  cursor: pointer;
 }
 
 .sorting-button:hover {
@@ -96,17 +97,41 @@
   color: brown;
 }
 
-.price-slider {
-  margin-left: 290px;
-  display: flex;
-  gap: 15px;
-}
-
 .on-sale-checkbox {
-  margin: 20px 0 0 290px;
+  margin: 20px 0 0 0;
+  font-size: 1.1rem;
 }
 
 .filter-reset-button {
   width: 300px;
   margin: 30px auto;
+  background-color: #f19cbd;
+  cursor: pointer;
+  border: 2px solid #fff;
+  border-radius: 30%;
+}
+
+.sorting-active {
+  background-color: #f19cbd;
+}
+
+.in-stock-checkbox {
+  margin: 20px 0 0 0;
+  font-size: 1.1rem;
+}
+
+.filter-block {
+  margin-left: 290px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px;
+  border: 3px solid #f19cbd;
+}
+
+.price-slider {
+  font-size: 1.1rem;
+  margin-left: 0;
+  display: flex;
+  gap: 15px;
 }
