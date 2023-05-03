@@ -4,6 +4,7 @@ import cors from "cors";
 import userRouter from "./routes/user.js";
 import productRouter from "./routes/product.js";
 import categoryRouter from "./routes/category.js";
+import paymentRouter from "./routes/payment.js";
 
 // Create an express server
 const app = express();
@@ -21,4 +22,5 @@ app.use(cors());
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/charge", paymentRouter);
 export default app;
