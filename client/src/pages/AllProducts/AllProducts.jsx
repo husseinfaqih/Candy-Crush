@@ -122,7 +122,7 @@ const AllProduct = () => {
   return (
     <div>
       <NavButtons />
-      <Header />
+      <Header page="allProducts" />
 
       <h1 className="product-page-title">Shop All Candy</h1>
       <SortAndFilter

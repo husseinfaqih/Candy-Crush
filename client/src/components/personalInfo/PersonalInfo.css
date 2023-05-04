@@ -1,0 +1,14 @@
+.personal-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: flex-end;
+}
+
+.input-warn {
+  border: 3px solid red;
+}
+
+.personal-input {
+  margin: 10px;
+}
