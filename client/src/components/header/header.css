@@ -103,6 +103,7 @@
   width: 50%;
   max-width: 70vw;
   margin: 3% auto 15%;
+
   color: #fe97c4;
   font-size: 3em;
   font-weight: 900;
@@ -131,7 +132,8 @@
     left: 0px;
   }
   .header-search-block {
-    width: 50vw;
+    width: 30vw;
+    /* max-width: 150px; */
     margin: 60px 0px 0px 100px;
   }
   .header-title {
@@ -149,6 +151,5 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  /* styles for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
 }
