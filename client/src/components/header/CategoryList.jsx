@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 import arrow from "../../assets/arrow.svg";
 import { Link } from "react-router-dom";
 
-function CategoryList() {
+function CategoryList({ page }) {
   const [categories, setCategories] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -21,7 +22,13 @@ function CategoryList() {
   }, []);
 
   return (
-    <menu className="header-category-list-block">
+    <menu
+      className={
+        page === "allProducts"
+          ? "header-category-list-block header-category-list-invisible"
+          : "header-category-list-block"
+      }
+    >
       <p className="header-category-title">Categories</p>
       <img
         onClick={clickArrow}
@@ -58,5 +65,9 @@ function CategoryList() {
     </menu>
   );
 }
+
+CategoryList.propTypes = {
+  page: PropTypes.string,
+};
 
 export default CategoryList;
