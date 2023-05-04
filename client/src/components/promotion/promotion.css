@@ -15,6 +15,7 @@
 
 .promotion-image {
   width: 30vw;
+  object-fit: cover;
 }
 
 .promotion-title {
