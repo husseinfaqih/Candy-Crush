@@ -14,6 +14,7 @@
   left: 15.25%;
   top: 12px;
 }
+
 .nav-bar {
   display: flex;
   flex-direction: row;
@@ -75,6 +76,7 @@
   height: 25px;
   cursor: pointer;
 } */
+
 /* .header-buttons {
   display: flex;
   flex-direction: row;
@@ -120,6 +122,11 @@
   z-index: 10;
   top: 40%;
   background-color: #05e0dc;
+}
+
+.header-category-list-invisible {
+  opacity: 0;
+  cursor: default;
 }
 
 @media (max-width: 767px) {
