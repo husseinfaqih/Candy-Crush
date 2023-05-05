@@ -63,3 +63,8 @@
   color: white;
   cursor: pointer;
 }
+@media (max-width: 767px) {
+  .categories-container {
+    width: 300px;
+  }
+}
