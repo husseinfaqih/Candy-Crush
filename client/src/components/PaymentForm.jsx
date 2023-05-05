@@ -2,22 +2,32 @@ import React, { useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import useFetch from "../hooks/useFetch";
 
+// eslint-disable-next-line react/prop-types
 const PaymentForm = ({ amount }) => {
+  // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useState(null);
 
   const handleToken = async (token) => {
     setToken(token);
 
-    const response = await useFetch("/charge", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token,
-        amount,
-      }),
-    });
+    try {
+      const response = await useFetch("/charge", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          token,
+          amount,
+        }),
+      });
+
+      // eslint-disable-next-line no-console
+      console.log(response);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
   };
 
   return (
