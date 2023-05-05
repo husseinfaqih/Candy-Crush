@@ -6,20 +6,17 @@ import Basket from "../../components/ProductDisplay/Basket";
 import { CartContext } from "../../store/Context";
 import { useContext } from "react";
 import Header from "../../components/header/Header";
-import NavButtons from "../../components/header/NavButtons";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 
+import Summary from "../../components/Summary/Summary";
+
 export default function Cart() {
-  const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
+  const { items, addItem, removeItem } = useContext(CartContext);
 
   return (
     <>
-      <NavButtons />
       <Header />
-      <h1 style={{ textAlign: "center" }}>
-        your products ,total price is ${totalAmount.toFixed(2)}
-      </h1>
       <div>
         <div className="product-display-grid">
           {items &&
@@ -41,6 +38,7 @@ export default function Cart() {
               );
             })}
         </div>
+        <Summary />
       </div>
       <Footer />
     </>
