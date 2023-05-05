@@ -54,8 +54,6 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         if (isSuccess) {
           setPersonalData(formData);
           setIsCorrectPersonalData(true);
-          // eslint-disable-next-line no-console
-          console.log(formData);
         } else {
           // eslint-disable-next-line no-console
           console.log("need change");

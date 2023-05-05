@@ -43,7 +43,9 @@ export default function Cart() {
             })}
         </div>
       </div>
-      <Link to="/payment">For payment and entering personal data</Link>
+      {totalAmount > 0 && (
+        <Link to="/payment">For payment and entering personal data</Link>
+      )}
       <Footer />
     </>
   );

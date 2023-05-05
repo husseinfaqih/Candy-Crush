@@ -5,14 +5,18 @@ import PersonalInfo from "../../components/personalInfo/PersonalInfo";
 import PaymentForm from "../../components/PaymentForm";
 import NavButtons from "../../components/header/NavButtons";
 import { CartContext } from "../../store/Context";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const PaymentPage = () => {
   const [isCorrectPersonalData, setIsCorrectPersonalData] = useState(false);
   const [isCorrectPayment, setIsCorrectPayment] = useState(false);
   const [personalData, setPersonalData] = useState({});
+  const [paymentError, setPaymentError] = useState(false);
   const { items, totalAmount, resetCart } = useContext(CartContext);
   const location = useLocation();
+  const sum = items
+    .map((item) => item.amount)
+    .reduce((acc, curr) => acc + curr, 0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,7 +35,7 @@ const PaymentPage = () => {
         <h3>Checking your order</h3>
         {!isCorrectPayment && (
           <p>
-            You pay {totalAmount} euro for {items.length} products
+            You pay {totalAmount.toFixed(2)} euro for {sum} products
           </p>
         )}
       </div>
@@ -59,13 +63,20 @@ const PaymentPage = () => {
           </p>
         </div>
       )}
+      {paymentError && <div>Your payment was not successful Try again</div>}
       {isCorrectPersonalData && !isCorrectPayment && (
         <PaymentForm
-          amount={totalAmount}
+          amount={totalAmount.toFixed(2)}
           setIsCorrectPayment={setIsCorrectPayment}
+          setPaymentError={setPaymentError}
         />
       )}
-      {isCorrectPayment && <h4>Your payment was successful</h4>}
+      {isCorrectPayment && (
+        <div>
+          <h4>Your payment was successful</h4>
+          <Link to="/">To the main page</Link>
+        </div>
+      )}
       <Footer />
     </div>
   );

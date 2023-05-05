@@ -8,6 +8,7 @@ import stripePackage from "stripe";
 const stripe = stripePackage(process.env.SK_TEST);
 
 paymentRouter.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const { amount, currency } = req.body;
 
@@ -16,9 +17,7 @@ paymentRouter.post("/", async (req, res) => {
       currency,
     });
 
-    res
-      .status(200)
-      .json({ success: true, result: paymentIntent.client_secret });
+    res.status(200).json({ success: true, result: paymentIntent });
   } catch (error) {
     res.status(500).json({ error: "An error occurred" });
   }

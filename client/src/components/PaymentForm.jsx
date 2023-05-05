@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import StripeCheckout from "react-stripe-checkout";
 import useFetch from "../hooks/useFetch";
 
-const PaymentForm = ({ amount, setIsCorrectPayment }) => {
+const PaymentForm = ({ amount, setIsCorrectPayment, setPaymentError }) => {
   const [isLoading, setIsLoading] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(null);
@@ -11,7 +11,12 @@ const PaymentForm = ({ amount, setIsCorrectPayment }) => {
   const [key, setKey] = useState("");
 
   const { performFetch } = useFetch("/charge", (data) => {
-    if (data.success) setIsCorrectPayment(true);
+    if (data.success && data.result.client_secret) {
+      setPaymentError(false);
+      setIsCorrectPayment(true);
+    } else {
+      setPaymentError(true);
+    }
   });
 
   const handlePayment = async (token) => {
@@ -25,13 +30,14 @@ const PaymentForm = ({ amount, setIsCorrectPayment }) => {
         },
         body: JSON.stringify({
           amount: amount * 100,
-          currency: "usd",
+          currency: "eur",
           token,
         }),
       });
       setKey(response);
     } catch (error) {
       setError(error);
+      setPaymentError(true);
       // eslint-disable-next-line no-console
       console.log(error);
     }
@@ -43,7 +49,7 @@ const PaymentForm = ({ amount, setIsCorrectPayment }) => {
       stripeKey={process.env.STRIP_KEY}
       name="Candy Rush"
       amount={amount * 100}
-      currency="USD"
+      currency="EUR"
       billingAddress
       zipCode
       token={handlePayment}
@@ -54,8 +60,9 @@ const PaymentForm = ({ amount, setIsCorrectPayment }) => {
 };
 
 PaymentForm.propTypes = {
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.number,
   setIsCorrectPayment: PropTypes.func.isRequired,
+  setPaymentError: PropTypes.func.isRequired,
 };
 
 export default PaymentForm;
