@@ -25,7 +25,7 @@ function CategoryList({ page }) {
     <menu
       className={
         page === "allProducts"
-          ? "header-category-list-block header-category-list-invisible"
+          ? "header-category-list-block invisible"
           : "header-category-list-block"
       }
     >
