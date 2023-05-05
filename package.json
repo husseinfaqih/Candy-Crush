@@ -51,11 +51,13 @@
         "husky": "^7.0.0"
     },
     "dependencies": {
+        "@stripe/react-stripe-js": "^2.1.0",
+        "@stripe/stripe-js": "^1.52.1",
         "concurrently": "^6.4.0",
         "react-icons": "^4.8.0",
         "react-slider": "^2.0.4",
-        "validator": "^13.9.0",
         "react-stripe-checkout": "^2.6.3",
-        "stripe": "^12.4.0"
+        "stripe": "^12.4.0",
+        "validator": "^13.9.0"
     }
 }

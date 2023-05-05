@@ -1,24 +1,24 @@
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 
 const paymentRouter = express.Router();
 
-import Stripe from "stripe";
-
-const stripe = new Stripe(
-  "sk_test_51MwmSdGLu9lhE68v4hgzjknTjSwWRmDzREbf6JSu48XWtIA09AGvPEwLJI21G2UQiOuJ0yWgTc65K3njYgPdajHa00hZNOeAiF"
-);
+import stripePackage from "stripe";
+const stripe = stripePackage(process.env.SK_TEST);
 
 paymentRouter.post("/", async (req, res) => {
   try {
-    const { token, amount } = req.body;
+    const { amount, currency } = req.body;
 
-    const charge = await stripe.charges.create({
-      amount: amount * 100,
-      currency: "USD",
-      source: token.id,
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency,
     });
-
-    res.status(200).json(charge);
+    console.log(paymentIntent.client_secret);
+    res
+      .status(200)
+      .json({ success: true, result: paymentIntent.client_secret });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "An error occurred" });

@@ -1,46 +1,61 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import StripeCheckout from "react-stripe-checkout";
 import useFetch from "../hooks/useFetch";
 
-// eslint-disable-next-line react/prop-types
-const PaymentForm = ({ amount }) => {
+const PaymentForm = ({ amount, setIsCorrectPayment }) => {
+  const [isLoading, setIsLoading] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [token, setToken] = useState(null);
+  const [error, setError] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [key, setKey] = useState("");
 
-  const handleToken = async (token) => {
-    setToken(token);
+  const { performFetch } = useFetch("/charge", (data) => {
+    if (data.success) setIsCorrectPayment(true);
+  });
 
+  const handlePayment = async (token) => {
+    setIsLoading(true);
+    setError(null);
     try {
-      const response = await useFetch("/charge", {
+      const response = await performFetch({
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          amount: amount * 100,
+          currency: "usd",
           token,
-          amount,
         }),
       });
-
-      // eslint-disable-next-line no-console
-      console.log(response);
+      setKey(response);
     } catch (error) {
+      setError(error);
       // eslint-disable-next-line no-console
-      console.error(error);
+      console.log(error);
     }
+    setIsLoading(false);
   };
 
   return (
     <StripeCheckout
-      stripeKey="pk_test_51MwmSdGLu9lhE68vcDIB7Y5aEBxLk31BxWoJnkxfqG45fMMofZY9NgnOtfCh5dJngzrv2n5UnoDFhHxjZvno0y5r00V5lAyZ3y"
-      token={handleToken}
-      amount={amount}
+      stripeKey={process.env.STRIP_KEY}
+      name="Candy Rush"
+      amount={amount * 100}
       currency="USD"
-      name="Payment"
       billingAddress
-      shippingAddress
+      zipCode
+      token={handlePayment}
+      disabled={isLoading}
+      stripeAccount=""
     />
   );
+};
+
+PaymentForm.propTypes = {
+  amount: PropTypes.number.isRequired,
+  setIsCorrectPayment: PropTypes.func.isRequired,
 };
 
 export default PaymentForm;

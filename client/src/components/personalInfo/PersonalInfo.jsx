@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import validator from "validator";
 import "./PersonalInfo.css";
 
-function PersonalInfo() {
+function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
   const API_KEY = process.env.ADDRESS_API_KEY;
   const [formData, setFormData] = useState({
     name: "",
@@ -49,10 +50,13 @@ function PersonalInfo() {
           isSuccess = false;
           setWarnData((prevState) => ({ ...prevState, country: true }));
         }
-        //main information
-        // eslint-disable-next-line no-console
-        if (isSuccess) console.log(formData);
-        else {
+
+        if (isSuccess) {
+          setPersonalData(formData);
+          setIsCorrectPersonalData(true);
+          // eslint-disable-next-line no-console
+          console.log(formData);
+        } else {
           // eslint-disable-next-line no-console
           console.log("need change");
         }
@@ -192,9 +196,14 @@ function PersonalInfo() {
           }
         />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">To pay</button>
     </form>
   );
 }
+
+PersonalInfo.propTypes = {
+  setPersonalData: PropTypes.func.isRequired,
+  setIsCorrectPersonalData: PropTypes.func.isRequired,
+};
 
 export default PersonalInfo;

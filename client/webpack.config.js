@@ -44,6 +44,7 @@ module.exports = {
       // Default is '' because on our heroku servers we want to have it default to our current URL
       BASE_SERVER_URL: "",
       ADDRESS_API_KEY: "",
+      STRIP_KEY: "",
     }),
   ],
   // To tell the dev server that everything should go back to index.html

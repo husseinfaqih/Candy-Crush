@@ -9,6 +9,7 @@ import Header from "../../components/header/Header";
 import NavButtons from "../../components/header/NavButtons";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
@@ -42,6 +43,7 @@ export default function Cart() {
             })}
         </div>
       </div>
+      <Link to="/payment">For payment and entering personal data</Link>
       <Footer />
     </>
   );
