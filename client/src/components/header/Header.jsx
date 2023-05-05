@@ -13,7 +13,9 @@ import DonutTwo from "./DonutTwo";
 
 function Header({ page }) {
   return (
-    <header className="header">
+    <header
+      className={page === "allProducts" ? "header-allProducts" : "header"}
+    >
       <Logo />
       <div className="header-search-block">
         <SearchBar />
@@ -26,7 +28,7 @@ function Header({ page }) {
       </div>
       <DonutOne />
       <DonutTwo />
-      <MainTitle />
+      <MainTitle page={page} />
     </header>
   );
 }
