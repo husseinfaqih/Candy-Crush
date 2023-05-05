@@ -8,7 +8,6 @@ import stripePackage from "stripe";
 const stripe = stripePackage(process.env.SK_TEST);
 
 paymentRouter.post("/", async (req, res) => {
-  console.log(req.body);
   try {
     const { amount, currency } = req.body;
 
