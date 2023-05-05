@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import CategoryList from "./CategoryList";
@@ -10,13 +11,13 @@ import MainTitle from "./MainTitle";
 import DonutOne from "./DonutOne";
 import DonutTwo from "./DonutTwo";
 
-function Header() {
+function Header({ page }) {
   return (
     <header className="header">
       <Logo />
       <div className="header-search-block">
         <SearchBar />
-        <CategoryList />
+        <CategoryList page={page} />
       </div>
       <div className="header-buttons">
         {/* <LoginButton />
@@ -29,5 +30,9 @@ function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  page: PropTypes.string,
+};
 
 export default Header;

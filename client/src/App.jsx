@@ -6,6 +6,7 @@ import UserList from "./pages/User/UserList";
 import AllProducts from "./pages/AllProducts/AllProducts";
 import SearchResultPage from "./pages/SearchResultPage/SearchResultPage";
 import ConfirmationPage from "./pages/Confirmation/Confirmation";
+import Cart from "./pages/cart/Cart";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/searchResult" element={<SearchResultPage />} />
 
         <Route path="/confirmation" element={<ConfirmationPage />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

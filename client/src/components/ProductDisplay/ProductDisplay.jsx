@@ -50,7 +50,7 @@ const ProductDisplay = ({
                   <ProductOverview product={product} />
                   <Rating productRating={product.rate} />
                   <Favorite />
-                  <Basket />
+                  <Basket product={product} />
                 </div>
               );
             })}
