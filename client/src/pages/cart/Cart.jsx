@@ -6,7 +6,6 @@ import Basket from "../../components/ProductDisplay/Basket";
 import { CartContext } from "../../store/Context";
 import { useContext } from "react";
 import Header from "../../components/header/Header";
-import NavButtons from "../../components/header/NavButtons";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 
@@ -17,7 +16,6 @@ export default function Cart() {
 
   return (
     <>
-      <NavButtons />
       <Header />
       <div>
         <div className="product-display-grid">

@@ -1,11 +1,9 @@
 import React from "react";
-import NavButtons from "../header/NavButtons";
 import Header from "../header/Header";
 
 const Confirmation = () => {
   return (
     <div>
-      <NavButtons />
       <Header />
 
       <h1 className="product-page-title">Confirmation Page</h1>
