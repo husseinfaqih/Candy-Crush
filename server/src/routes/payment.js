@@ -15,12 +15,11 @@ paymentRouter.post("/", async (req, res) => {
       amount,
       currency,
     });
-    console.log(paymentIntent.client_secret);
+
     res
       .status(200)
       .json({ success: true, result: paymentIntent.client_secret });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: "An error occurred" });
   }
 });
