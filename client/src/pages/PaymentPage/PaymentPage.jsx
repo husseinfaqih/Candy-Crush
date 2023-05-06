@@ -3,7 +3,6 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import PersonalInfo from "../../components/personalInfo/PersonalInfo";
 import PaymentForm from "../../components/PaymentForm";
-import NavButtons from "../../components/header/NavButtons";
 import { CartContext } from "../../store/Context";
 import { Link, useLocation } from "react-router-dom";
 
@@ -29,7 +28,6 @@ const PaymentPage = () => {
   }, [isCorrectPayment]);
   return (
     <div>
-      <NavButtons />
       <Header />
       <div>
         <h3>Checking your order</h3>

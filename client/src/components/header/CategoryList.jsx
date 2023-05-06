@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 import arrow from "../../assets/arrow.svg";
 import { Link } from "react-router-dom";
-
 function CategoryList({ page }) {
   const [categories, setCategories] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -25,7 +24,7 @@ function CategoryList({ page }) {
     <menu
       className={
         page === "allProducts"
-          ? "header-category-list-block header-category-list-invisible"
+          ? "header-category-list-block invisible"
           : "header-category-list-block"
       }
     >
