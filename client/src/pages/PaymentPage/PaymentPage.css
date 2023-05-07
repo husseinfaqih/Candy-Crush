@@ -1,0 +1,43 @@
+.payment-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-title {
+  margin: 10px auto;
+  font-size: 2rem;
+  line-height: 2.1rem;
+  color: #fe97c4;
+}
+
+.payment-text {
+  margin: 10px auto;
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  color: #fe97c4;
+}
+
+.payment-subtitle {
+  margin: 10px auto;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  color: #fe97c4;
+}
+
+.payment-text-black {
+  color: black;
+  font-size: 1.1rem;
+}
+
+.payment-button {
+  display: flex;
+  width: 130px;
+  margin: 20px auto;
+}
+
+.payment-link-main-page {
+  margin: 20px auto;
+  color: #05e0dc;
+  font-size: 2rem;
+  text-decoration: none;
+}

@@ -5,6 +5,7 @@ import PersonalInfo from "../../components/personalInfo/PersonalInfo";
 import PaymentForm from "../../components/PaymentForm";
 import { CartContext } from "../../store/Context";
 import { Link, useLocation } from "react-router-dom";
+import "./PaymentPage.css";
 
 const PaymentPage = () => {
   const [isCorrectPersonalData, setIsCorrectPersonalData] = useState(false);
@@ -29,22 +30,21 @@ const PaymentPage = () => {
   return (
     <div>
       <Header />
-      <div>
-        <h3>Checking your order</h3>
+      <div className="payment-container">
+        <h3 className="payment-title">Checking your order</h3>
         {!isCorrectPayment && (
-          <p>
+          <p className="payment-text">
             You pay {totalAmount.toFixed(2)} euro for {sum} products
           </p>
         )}
+
+        {!isCorrectPersonalData && (
+          <h3 className="payment-subtitle">
+            Enter the correct information in the fields below and then you can
+            proceed to payment
+          </h3>
+        )}
       </div>
-
-      {!isCorrectPersonalData && (
-        <h3>
-          Enter the correct information in the fields below and then you can
-          proceed to payment
-        </h3>
-      )}
-
       {!isCorrectPersonalData && (
         <PersonalInfo
           setPersonalData={setPersonalData}
@@ -52,27 +52,40 @@ const PaymentPage = () => {
         />
       )}
       {isCorrectPersonalData && (
-        <div>
-          <p>Your name {personalData.name}</p>
-          <p>
-            Your delivery address: {personalData.country},
-            {personalData.postalCode}, {personalData.city},
-            {personalData.addressLine1}
+        <div className="payment-container">
+          <p className="payment-text">
+            Your name:{" "}
+            <span className="payment-text-black">{personalData.name}</span>
+          </p>
+          <p className="payment-text">
+            Your delivery address:{" "}
+            <span className="payment-text-black">
+              {personalData.country}, {personalData.postalCode},{" "}
+              {personalData.city}, {personalData.addressLine1}
+            </span>
           </p>
         </div>
       )}
-      {paymentError && <div>Your payment was not successful Try again</div>}
-      {isCorrectPersonalData && !isCorrectPayment && (
-        <PaymentForm
-          amount={totalAmount.toFixed(2)}
-          setIsCorrectPayment={setIsCorrectPayment}
-          setPaymentError={setPaymentError}
-        />
+      {paymentError && (
+        <div className="payment-subtitle">
+          Your payment was not successful Try again
+        </div>
       )}
+      <div className="payment-button">
+        {isCorrectPersonalData && !isCorrectPayment && (
+          <PaymentForm
+            amount={totalAmount.toFixed(2)}
+            setIsCorrectPayment={setIsCorrectPayment}
+            setPaymentError={setPaymentError}
+          />
+        )}
+      </div>
       {isCorrectPayment && (
-        <div>
-          <h4>Your payment was successful</h4>
-          <Link to="/">To the main page</Link>
+        <div className="payment-container">
+          <h4 className="payment-subtitle">Your payment was successful</h4>
+          <Link className="payment-link-main-page" to="/">
+            To the main page
+          </Link>
         </div>
       )}
       <Footer />
