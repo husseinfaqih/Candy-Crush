@@ -114,7 +114,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
   return (
     <form onSubmit={handleSubmit} className="personal-form">
       <div>
-        <label htmlFor="name">Name:</label>
+        <label className="personal-form-label" htmlFor="name">
+          Name:
+        </label>
         <input
           type="text"
           id="name"
@@ -127,7 +129,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
       <div>
-        <label htmlFor="addressLine1">Address Line 1:</label>
+        <label className="personal-form-label" htmlFor="addressLine1">
+          Address Line 1:
+        </label>
         <input
           type="text"
           id="addressLine1"
@@ -143,7 +147,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
       </div>
 
       <div>
-        <label htmlFor="city">City:</label>
+        <label className="personal-form-label" htmlFor="city">
+          City:
+        </label>
         <input
           type="text"
           id="city"
@@ -156,7 +162,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
       <div>
-        <label htmlFor="postalCode">Postal Code:</label>
+        <label className="personal-form-label" htmlFor="postalCode">
+          Postal Code:
+        </label>
         <input
           type="text"
           id="postalCode"
@@ -169,7 +177,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
       <div>
-        <label htmlFor="country">Country:</label>
+        <label className="personal-form-label" htmlFor="country">
+          Country:
+        </label>
         <input
           type="text"
           id="country"
@@ -182,7 +192,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label className="personal-form-label" htmlFor="email">
+          Email:
+        </label>
         <input
           type="email"
           id="email"
@@ -194,7 +206,9 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
           }
         />
       </div>
-      <button type="submit">To pay</button>
+      <button className="personal-info-button" type="submit">
+        To pay
+      </button>
     </form>
   );
 }
