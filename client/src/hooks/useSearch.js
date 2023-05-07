@@ -36,7 +36,10 @@ function useSearch(searchWord) {
       .filter((item) => {
         return item.productName.toLowerCase().includes(word.toLowerCase());
       })
-      .map((suggestion) => suggestion.productName);
+      .map((suggestion) => ({
+        productName: suggestion.productName,
+        _id: suggestion._id,
+      }));
 
     return suggestions;
   }
