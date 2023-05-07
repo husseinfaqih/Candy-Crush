@@ -21,11 +21,15 @@ function Header({ page }) {
       <div className="header-search-block">
         <SearchBar />
         <CategoryList page={page} />
-        <AllProductsLink />
-        <FavoriteButton />
-        <CartButton />
+        <div className="header-buttons">
+          <AllProductsLink />
+          <div className="cart-and-favorites-buttons">
+            <FavoriteButton />
+            <CartButton />
+          </div>
+        </div>
       </div>
-      <div className="header-buttons">{/* <LoginButton /> */}</div>
+      {/* <LoginButton /> */}
       <DonutOne />
       <DonutTwo />
       <MainTitle page={page} />

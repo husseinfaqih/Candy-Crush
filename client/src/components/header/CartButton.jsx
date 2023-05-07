@@ -11,10 +11,12 @@ function CartButton() {
     .reduce((acc, curr) => acc + curr, 0);
 
   return (
-    <Link className="header-cart-button" to="/cart">
-      <img className="header-cart-button-image" src={cart} alt="cart" />
-      <h3>{sum}</h3>
-    </Link>
+    <>
+      <Link className="header-cart-button" to="/cart">
+        <img className="header-cart-button-image" src={cart} alt="cart" />
+        <h3 className="cart-sum">{sum}</h3>
+      </Link>
+    </>
   );
 }
 
