@@ -18,7 +18,7 @@ const SearchDisplay = ({ products }) => {
             <ProductOverview product={product} />
             <Rating productRating={product.rating} />
             <Favorite />
-            <Basket />
+            <Basket product={product} />
           </div>
         );
       })}

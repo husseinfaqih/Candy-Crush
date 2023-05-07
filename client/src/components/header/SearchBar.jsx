@@ -37,11 +37,11 @@ function SearchBar() {
             return (
               <div key={index}>
                 <Link
-                  to={suggestion}
+                  to={`/product/${suggestion._id}`}
                   className="header-search-suggestion"
                   key={index}
                 >
-                  {suggestion}
+                  {suggestion.productName}
                 </Link>
               </div>
             );
