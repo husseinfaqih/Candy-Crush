@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Rating from "../../components/ProductDisplay/Rating";
 import Favorite from "../../components/ProductDisplay/Favorite";
@@ -10,9 +10,17 @@ import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 
 import Summary from "../../components/Summary/Summary";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
-  const { items, addItem, removeItem } = useContext(CartContext);
+  const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
+  const [isEmptyCart, setIsEmptyCart] = useState(true);
+
+  useEffect(() => {
+    if (totalAmount > 0) {
+      setIsEmptyCart(false);
+    }
+  }, [totalAmount]);
 
   return (
     <>
@@ -40,6 +48,9 @@ export default function Cart() {
         </div>
         <Summary />
       </div>
+      {!isEmptyCart && (
+        <Link to="/payment">For payment and entering personal data</Link>
+      )}
       <Footer />
     </>
   );

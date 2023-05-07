@@ -14,7 +14,7 @@ function Logo({ position }) {
   );
 }
 Logo.propTypes = {
-  position: PropTypes.string.isRequired,
+  position: PropTypes.string,
 };
 
 export default Logo;
