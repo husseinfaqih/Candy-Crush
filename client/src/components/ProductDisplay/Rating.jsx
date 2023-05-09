@@ -1,4 +1,6 @@
 import React from "react";
+import useFetch from "../../hooks/useFetch";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
@@ -10,14 +12,22 @@ const Rating = ({ productRating, product }) => {
     i < productRating ? filledStar : emptyStar
   );
 
+  const [rating, setRating] = useState(product.rate);
+
+  const { performFetch } = useFetch(
+    `/product/rate/${product._id}?rating=${rating}`
+  );
+
   const updateRating = (index) => {
     const newRating = Math.round((product.rate + index) / 2);
-    // eslint-disable-next-line no-console
-    console.log("Old Rating:", product.rate);
-    // eslint-disable-next-line no-console
-    console.log("Clicked star index:", index);
-    // eslint-disable-next-line no-console
-    console.log("new Rating:", newRating);
+    setRating(newRating);
+
+    performFetch({
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
   };
 
   return (
