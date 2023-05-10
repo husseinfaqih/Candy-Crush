@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
-import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import Footer from "../../components/Footer/Footer";
 import Rating from "../../components/ProductDisplay/Rating";
 import Favorite from "../../components/ProductDisplay/Favorite";
 import Basket from "../../components/ProductDisplay/Basket";
 import "./ProductPage.css";
+import TitleProductPage from "../../components/ProductPageComponents/TitleProductPage";
+import ImageProductPage from "../../components/ProductPageComponents/ImageProductPage";
+import PriceProductPage from "../../components/ProductPageComponents/PriceProductPage";
+import DescriptionProductPage from "../../components/ProductPageComponents/DescriptionProductPage";
+import RecommendationsProductPage from "../../components/ProductPageComponents/Recommendations";
 
 function ProductPage() {
   const { id } = useParams();
@@ -18,27 +22,36 @@ function ProductPage() {
       setProduct(response.result);
     }
   );
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   useEffect(() => {
     performFetch();
     return cancelFetch;
   }, []);
 
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(product);
-  }, [product]);
   return (
     <>
       <Header />
-      <div
-        className="product-display-component product-center"
-        key={product._id}
-      >
-        <ProductOverview product={product} />
+      <TitleProductPage title={product.productName} />
+      <div className="product-page-rating">
         <Rating productRating={product.rate} />
-        <Favorite />
-        <Basket product={product} />
       </div>
+      <div className="product-page-center" key={product._id}>
+        <ImageProductPage image={product.image} />
+        <div className="product-page-description-block">
+          <PriceProductPage price={product.price} />
+          <DescriptionProductPage description={product.description} />
+          <div className="product-page-basket-favorite">
+            <Basket product={product} />
+            <Favorite />
+          </div>
+        </div>
+      </div>
+      <RecommendationsProductPage category={product.category} />
       <Footer />
     </>
   );

@@ -2,33 +2,50 @@
   display: flex;
   margin: 0 auto;
   flex-direction: column;
-  width: 300px;
-  align-items: flex-end;
+  width: 600px;
 }
 
 .personal-input {
-  margin: 10px;
-  border: 1px solid #05e0dc;
-  border-radius: 5px;
+  margin: 0 auto;
+  width: 50%;
+  height: 25px;
 }
 
 .input-warn {
   border: 3px solid red;
 }
 
+.personal-form div {
+  display: flex;
+  flex-direction: column;
+}
+
 .personal-form-label {
+  margin: 5px auto;
   font-size: 1.1rem;
   line-height: 1.3rem;
   color: black;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .personal-info-button {
-  margin: 10px auto 30px;
-  width: 150px;
+  margin: 30px auto 30px;
+  width: 100%;
   height: 40px;
-  border-radius: 10px;
+  background-color: #fee588;
   cursor: pointer;
-  background-color: #fe97c4;
-  color: white;
+  color: #f19cbd;
+  letter-spacing: 2px;
   font-size: 1.4rem;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .personal-form {
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 80%;
+  }
 }
