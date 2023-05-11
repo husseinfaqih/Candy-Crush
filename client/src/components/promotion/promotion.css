@@ -86,9 +86,12 @@
     font-size: 0.8rem;
   }
   .promotion-popup {
-    width: 80vw;
+    width: 85vw;
     left: 5%;
-    height: 120vh;
+    height: 70vh;
+  }
+  .promotion-popup-text {
+    font-size: 1rem;
   }
 }
 
@@ -104,6 +107,10 @@
   }
   .promotion-popup {
     width: 80vw;
+    height: 50vh;
     left: 5%;
+  }
+  .promotion-popup-text {
+    font-size: 1.4rem;
   }
 }
