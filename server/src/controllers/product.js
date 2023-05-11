@@ -96,3 +96,19 @@ export const getProductsByCategory = async (req, res) => {
       .json({ success: false, msg: "Unable to get products, try again later" });
   }
 };
+
+//UPDATE PRODUCT RATING
+export const updateRating = async (req, res) => {
+  try {
+    const rating = req.query.rating;
+    const product = await Product.findByIdAndUpdate(req.params.id, {
+      rate: rating,
+    });
+    res.status(200).json({ success: true, result: product });
+  } catch (e) {
+    res.status(500).json({
+      success: false,
+      msg: "Unable to get this product, try again later",
+    });
+  }
+};
