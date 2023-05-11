@@ -20,7 +20,8 @@ export const getReviews = async (req, res) => {
 //CREATE REVIEW
 export const createReview = async (req, res) => {
   try {
-    const product = await Product.findById(req.params.productId);
+    const product = await Product.findById(req.params.productId.trim());
+
     if (!product) throw new Error("Product not found");
 
     const review = new Review({
@@ -36,13 +37,14 @@ export const createReview = async (req, res) => {
     res.status(500).json({
       success: false,
       msg: "Unable to create Review, try again later",
+      error: e,
     });
   }
 };
 
 export const deleteReview = async (req, res) => {
   try {
-    const review = await Review.findByIdAndDelete(req.params.id);
+    const review = await Review.findByIdAndDelete(req.params.reviewId.trim());
     if (!review) throw new Error("Review not found");
     res
       .status(200)
