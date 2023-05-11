@@ -1,20 +1,33 @@
+.payment-page-container {
+  background-color: #fe97c4;
+  width: 70%;
+  margin: 20px auto 40px;
+}
+
 .payment-container {
   display: flex;
   flex-direction: column;
 }
 
 .payment-title {
-  margin: 10px auto;
+  margin: 20px auto;
   font-size: 2rem;
   line-height: 2.1rem;
-  color: #fe97c4;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: black;
 }
 
 .payment-text {
   margin: 10px auto;
   font-size: 1.5rem;
   line-height: 1.7rem;
-  color: #fe97c4;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 2px;
 }
 
 .payment-subtitle {
@@ -25,8 +38,11 @@
 }
 
 .payment-text-black {
+  margin: 0 auto;
   color: black;
   font-size: 1.1rem;
+  font-weight: 300;
+  letter-spacing: 2px;
 }
 
 .payment-button {
@@ -36,8 +52,15 @@
 }
 
 .payment-link-main-page {
-  margin: 20px auto;
-  color: #05e0dc;
-  font-size: 2rem;
+  margin: 30px auto 30px;
+  width: 80%;
+  padding: 10px 0;
+  text-align: center;
   text-decoration: none;
+  background-color: #fee588;
+  cursor: pointer;
+  color: #f19cbd;
+  letter-spacing: 2.2px;
+  font-size: 1.4rem;
+  border: none;
 }

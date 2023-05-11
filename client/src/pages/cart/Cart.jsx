@@ -10,8 +10,6 @@ import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 
 import Summary from "../../components/Summary/Summary";
-import { Link } from "react-router-dom";
-import "./Cart.css";
 
 export default function Cart() {
   const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
@@ -47,14 +45,7 @@ export default function Cart() {
               );
             })}
         </div>
-        <Summary />
-      </div>
-      <div className="cart-payment-link-container">
-        {!isEmptyCart && (
-          <Link className="cart-payment-link" to="/payment">
-            For payment and entering personal data click here
-          </Link>
-        )}
+        <Summary isEmptyCart={isEmptyCart} />
       </div>
       <Footer />
     </>
