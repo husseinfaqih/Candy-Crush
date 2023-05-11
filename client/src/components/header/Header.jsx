@@ -22,7 +22,7 @@ function Header({ page }) {
         <SearchBar />
         <CategoryList page={page} />
         <div className="header-buttons">
-          <AllProductsLink />
+          <AllProductsLink page={page} />
           <div className="cart-and-favorites-buttons">
             <FavoriteButton />
             <CartButton />
