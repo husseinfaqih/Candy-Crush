@@ -48,7 +48,7 @@ const ProductDisplay = ({
               return (
                 <div className="product-display-component" key={product._id}>
                   <ProductOverview product={product} />
-                  <Rating productRating={product.rate} />
+                  <Rating productRating={product.rate} product={product} />
                   <Favorite />
                   <Basket product={product} />
                 </div>
