@@ -14,7 +14,7 @@ function RecommendationsProductPage({ category }) {
     const shuffledArray = response.result
       .slice()
       .sort(() => 0.5 - Math.random());
-    setProducts(shuffledArray.slice(0, 5));
+    setProducts(shuffledArray.slice(0, 3));
   });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ function RecommendationsProductPage({ category }) {
           return (
             <div className="product-display-component" key={product._id}>
               <ProductOverview product={product} />
-              <Rating productRating={product.rate} />
+              <Rating productRating={product.rate} product={product} />
               <Favorite />
               <Basket product={product} />
             </div>

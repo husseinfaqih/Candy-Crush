@@ -38,7 +38,7 @@ function ProductPage() {
       <Header />
       <TitleProductPage title={product.productName} />
       <div className="product-page-rating">
-        <Rating productRating={product.rate} />
+        <Rating productRating={product.rate} product={product} />
       </div>
       <div className="product-page-center" key={product._id}>
         <ImageProductPage image={product.image} />
