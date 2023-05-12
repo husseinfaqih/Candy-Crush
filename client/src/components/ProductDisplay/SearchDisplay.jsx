@@ -4,6 +4,7 @@ import Rating from "./Rating";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
 import PropTypes from "prop-types";
+import ProductTitleAndPrice from "./ProductTitleAndPrice";
 
 const SearchDisplay = ({ products }) => {
   return products.length === 0 ? (
@@ -14,11 +15,16 @@ const SearchDisplay = ({ products }) => {
     <div className="product-display-grid">
       {products.map((product) => {
         return (
-          <div className="product-display-component" key={product.id}>
+          <div className="product-display-component" key={product._id}>
             <ProductOverview product={product} />
-            <Rating productRating={product.rating} />
-            <Favorite />
-            <Basket product={product} />
+            <div className="white-background">
+              <ProductTitleAndPrice product={product} />
+              <Rating productRating={product.rate} product={product} />
+              <div className="product-options">
+                <Favorite />
+                <Basket product={product} />
+              </div>
+            </div>
           </div>
         );
       })}

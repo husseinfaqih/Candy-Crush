@@ -5,13 +5,6 @@ import { Link } from "react-router-dom";
 const ProductOverview = ({ product }) => {
   return (
     <div className="product-overview">
-      <p>
-        <Link className="product-overview-name" to={`/product/${product._id}`}>
-          {product.productName}
-        </Link>
-      </p>
-
-      <p>{product.price}</p>
       <Link to={`/product/${product._id}`}>
         <img src={product.image} alt={product.productName} />
       </Link>

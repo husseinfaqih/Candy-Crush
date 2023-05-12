@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Rating from "./Rating";
 import Favorite from "./Favorite";
 import Basket from "./Basket";
+import ProductTitleAndPrice from "./ProductTitleAndPrice";
 import useFetch from "../../hooks/useFetch";
 
 const ProductOverview = lazy(() => import("./ProductOverview"));
@@ -48,9 +49,14 @@ const ProductDisplay = ({
               return (
                 <div className="product-display-component" key={product._id}>
                   <ProductOverview product={product} />
-                  <Rating productRating={product.rate} product={product} />
-                  <Favorite />
-                  <Basket product={product} />
+                  <div className="white-background">
+                    <ProductTitleAndPrice product={product} />
+                    <Rating productRating={product.rate} product={product} />
+                    <div className="product-options">
+                      <Favorite />
+                      <Basket product={product} />
+                    </div>
+                  </div>
                 </div>
               );
             })}

@@ -12,7 +12,7 @@ const SearchResultPage = () => {
   return (
     <div>
       <Header />
-      <h1>Result of search</h1>
+      <h1 className="search-result-page-title">Result of search</h1>
       <SearchDisplay products={productsSearch} />
       <Footer />
     </div>

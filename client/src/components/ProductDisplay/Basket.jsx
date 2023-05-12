@@ -12,7 +12,7 @@ const Basket = ({ product }) => {
   };
   return (
     <div onClick={submitHandler} style={{ cursor: "pointer" }}>
-      <span style={{ fontSize: "20px" }}>add to cart</span>
+      <span style={{ fontSize: "20px" }}></span>
       <BsCart size={40} />
     </div>
   );

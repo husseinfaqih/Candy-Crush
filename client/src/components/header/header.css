@@ -139,11 +139,17 @@
   height: 100px;
 }
 
+.header-search-suggestion {
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+
 .header-search-suggestion-block {
   position: absolute;
   z-index: 10;
-  top: 40%;
-  background-color: #05e0dc;
+  top: 28%;
+  background-color: #fe97c4;
 }
 
 .invisible {
@@ -162,13 +168,15 @@
   }
   .header-logo {
     margin-top: 20px;
-    left: 30px;
-    min-width: 60px;
+    left: 20px;
+    min-width: 70px;
   }
   .header-search-block {
     width: 30vw;
-
-    margin: 60px 0px 0px 100px;
+    margin: 50px 0px 0px 100px;
+  }
+  .header-search-suggestion-block {
+    top: 26%;
   }
   .header-title {
     width: 100vw;
@@ -186,4 +194,13 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .header-logo {
+    margin-top: 20px;
+    left: 20px;
+    min-width: 70px;
+  }
+  .header-title {
+    width: 60%;
+    font-size: 3rem;
+  }
 }

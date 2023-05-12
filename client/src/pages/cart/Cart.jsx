@@ -8,6 +8,7 @@ import { useContext } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
+import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
 
 import Summary from "../../components/Summary/Summary";
 
@@ -31,9 +32,14 @@ export default function Cart() {
               return (
                 <div className="product-display-component" key={product._id}>
                   <ProductOverview product={product} />
-                  <Rating productRating={product.rate} product={product} />
-                  <Favorite />
-                  <Basket product={product} />
+                  <div className="white-background">
+                    <ProductTitleAndPrice product={product} />
+                    <Rating productRating={product.rate} product={product} />
+                    <div className="product-options">
+                      <Favorite />
+                      <Basket product={product} />
+                    </div>
+                  </div>
                   <span>amount : {product.amount}</span>
                   <button onClick={() => addItem({ ...product, amount: 1 })}>
                     + add
