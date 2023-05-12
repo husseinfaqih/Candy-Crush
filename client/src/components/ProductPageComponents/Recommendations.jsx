@@ -5,6 +5,7 @@ import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import Rating from "../../components/ProductDisplay/Rating";
 import Favorite from "../../components/ProductDisplay/Favorite";
 import Basket from "../../components/ProductDisplay/Basket";
+import ProductTitleAndPrice from "../ProductDisplay/ProductTitleAndPrice";
 
 function RecommendationsProductPage({ category }) {
   const [products, setProducts] = useState([]);
@@ -29,9 +30,14 @@ function RecommendationsProductPage({ category }) {
           return (
             <div className="product-display-component" key={product._id}>
               <ProductOverview product={product} />
-              <Rating productRating={product.rate} product={product} />
-              <Favorite />
-              <Basket product={product} />
+              <div className="white-background">
+                <ProductTitleAndPrice product={product} />
+                <Rating productRating={product.rate} product={product} />
+                <div className="product-options">
+                  <Favorite />
+                  <Basket product={product} />
+                </div>
+              </div>
             </div>
           );
         })}
