@@ -4,7 +4,6 @@ import { useLocation, useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import Rating from "../../components/ProductDisplay/Rating";
-import Favorite from "../../components/ProductDisplay/Favorite";
 import Basket from "../../components/ProductDisplay/Basket";
 import "./ProductPage.css";
 import TitleProductPage from "../../components/ProductPageComponents/TitleProductPage";
@@ -12,6 +11,7 @@ import ImageProductPage from "../../components/ProductPageComponents/ImageProduc
 import PriceProductPage from "../../components/ProductPageComponents/PriceProductPage";
 import DescriptionProductPage from "../../components/ProductPageComponents/DescriptionProductPage";
 import RecommendationsProductPage from "../../components/ProductPageComponents/Recommendations";
+import FavoriteIcon from "../../components/ProductDisplay/FavoriteIcon";
 
 function ProductPage() {
   const { id } = useParams();
@@ -47,7 +47,7 @@ function ProductPage() {
           <DescriptionProductPage description={product.description} />
           <div className="product-page-basket-favorite">
             <Basket product={product} />
-            <Favorite />
+            <FavoriteIcon product={product} />
           </div>
         </div>
       </div>

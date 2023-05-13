@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import Rating from "../../components/ProductDisplay/Rating";
-import Favorite from "../../components/ProductDisplay/Favorite";
+import Favorite from "../ProductDisplay/FavoriteIcon";
 import Basket from "../../components/ProductDisplay/Basket";
 import ProductTitleAndPrice from "../ProductDisplay/ProductTitleAndPrice";
 
