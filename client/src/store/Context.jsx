@@ -19,7 +19,7 @@ const CartProvider = (props) => {
   };
 
   const resetCartHandler = () => {
-    dispatchCartAction({ type: "RESET" }); 
+    dispatchCartAction({ type: "RESET" });
   };
 
   const cartContext = {
