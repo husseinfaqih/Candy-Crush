@@ -5,7 +5,6 @@ import FavoriteICon from "./FavoriteIcon";
 import Basket from "./Basket";
 import ProductTitleAndPrice from "./ProductTitleAndPrice";
 import useFetch from "../../hooks/useFetch";
-import { useFavorites } from "../Context/FavoritesContext";
 
 const ProductOverview = lazy(() => import("./ProductOverview"));
 
@@ -18,7 +17,6 @@ const ProductDisplay = ({
 }) => {
   const [products, setProducts] = useState([]);
   const [loadingProducts, setLoadingProducts] = useState(true);
-  const { favorites, addFavorite } = useFavorites();
 
   const serverRequest = `/product/${filterQuery.categories}?minPrice=${filterQuery.minPrice}&maxPrice=${filterQuery.maxPrice}&onSale=${filterQuery.onSale}&inStock=${filterQuery.inStock}&sortBy=${sortBy}&sortOrder=${sortOrder}`;
 
@@ -42,14 +40,6 @@ const ProductDisplay = ({
     }
   }, [filterQuery]);
 
-  const isFavorite = (productId) => {
-    return favorites.some((favorite) => favorite._id === productId);
-  };
-
-  const handleFavoriteClick = (product) => {
-    addFavorite(product);
-  };
-
   return (
     <div>
       <Suspense fallback={<div>Loading Product Overview...</div>}>
@@ -63,11 +53,7 @@ const ProductDisplay = ({
                     <ProductTitleAndPrice product={product} />
                     <Rating productRating={product.rate} product={product} />
                     <div className="product-options">
-                      <FavoriteICon
-                        product={product}
-                        isFavorite={isFavorite(product._id)}
-                        handleFavoriteClick={() => handleFavoriteClick(product)}
-                      />
+                      <FavoriteICon product={product} />
                       <Basket product={product} />
                     </div>
                   </div>
