@@ -1,15 +1,12 @@
 import React from "react";
-import favorites from "../../assets/favorites.svg";
+import { AiOutlineHeart } from "react-icons/ai";
+
 import { Link } from "react-router-dom";
 
 function FavoriteButton() {
   return (
     <Link to="/favorite" className="header-favorites-button">
-      <img
-        className="header-favorites-button-image"
-        src={favorites}
-        alt="favorites"
-      />
+      <AiOutlineHeart className="header-favorites-button-image" size={40} />
     </Link>
   );
 }
