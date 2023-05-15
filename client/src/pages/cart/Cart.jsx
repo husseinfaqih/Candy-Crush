@@ -9,8 +9,8 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
-
 import Summary from "../../components/Summary/Summary";
+import "./cart.css";
 
 export default function Cart() {
   const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
@@ -40,13 +40,15 @@ export default function Cart() {
                       <Basket product={product} />
                     </div>
                   </div>
-                  <span>amount : {product.amount}</span>
-                  <button onClick={() => addItem({ ...product, amount: 1 })}>
-                    + add
-                  </button>
-                  <button onClick={() => removeItem(product._id)}>
-                    - deduct
-                  </button>
+                  <div className="cart-options">
+                    <span className="amount-items">
+                      Amount : {product.amount}
+                    </span>
+                    <button onClick={() => addItem({ ...product, amount: 1 })}>
+                      +
+                    </button>
+                    <button onClick={() => removeItem(product._id)}>-</button>
+                  </div>
                 </div>
               );
             })}
