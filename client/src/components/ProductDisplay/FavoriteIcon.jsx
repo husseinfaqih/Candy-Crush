@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 const FavoriteIcon = ({ product }) => {
   const { favorites, addFavorite, removeFavorite } = useFavorites();
 
-  const isFavorite = favorites.some((p) => p._id === product._id);
+  const isFavorite = product && favorites.some((p) => p._id === product._id);
 
   const handleClick = () => {
     if (isFavorite) {
