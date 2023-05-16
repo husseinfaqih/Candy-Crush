@@ -6,7 +6,7 @@ function TitleProductPage({ title }) {
 }
 
 TitleProductPage.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
 
 export default TitleProductPage;
