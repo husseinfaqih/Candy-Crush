@@ -9,6 +9,7 @@ import SearchResultPage from "./pages/SearchResultPage/SearchResultPage";
 import ConfirmationPage from "./pages/Confirmation/Confirmation";
 import Cart from "./pages/cart/Cart";
 import ProductPage from "./pages/ProductPage/ProductPage";
+import Favorite from "./pages/FavoritePage/Favorites";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/confirmation" element={<ConfirmationPage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </>
   );

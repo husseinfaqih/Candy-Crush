@@ -5,12 +5,16 @@ import CartProvider from "./store/Context";
 
 import AppWrapper from "./AppWrapper";
 import App from "./App";
+import { FavoritesProvider } from "./components/Context/FavoritesContext";
 
 ReactDOM.render(
-  <CartProvider>
-    <AppWrapper>
-      <App />
-    </AppWrapper>
-  </CartProvider>,
+  <FavoritesProvider>
+    <CartProvider>
+      <AppWrapper>
+        <App />
+      </AppWrapper>
+    </CartProvider>
+  </FavoritesProvider>,
+
   document.getElementById("root")
 );
