@@ -1,8 +1,15 @@
+.categories-div,
+.categories-div button,
+.sorting-button,
+.categories {
+  font-family: Comfortaa;
+  font-weight: 1;
+}
 .product-page-title {
   color: #f19cbd;
-  font-size: 2.5rem;
-  margin-left: 40%;
-  width: 270px;
+  font-size: 3.5rem;
+  margin-left: 12%;
+  width: 470px;
 }
 
 .sortAndFilter {
@@ -16,11 +23,16 @@
   width: 0px;
   height: 0px;
 }
-
+.categories {
+  margin-left: 12%;
+}
 .categories-div {
-  margin-left: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 12%;
   margin-bottom: 30px;
-  width: 540px;
+  width: 75vw;
+  height: 120px;
 }
 
 .category-button {
@@ -37,15 +49,16 @@
 .sorting-div {
   display: flex;
   flex-direction: row;
-  width: 60vw;
+  width: 75vw;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  align-self: center;
+  margin-left: 12%;
   margin-bottom: 70px;
 }
 
 .sorting-button {
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   background: none;
   border: 3px solid #f19cbd;
   cursor: pointer;
@@ -55,13 +68,17 @@
   color: white;
   background-color: #f19cbd;
 }
-
+.product-container {
+  margin-left: 12%;
+  width: 80vw;
+  display: flex;
+}
 .product-display-grid {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 75vw;
 }
 
 .header-categories {
@@ -90,8 +107,8 @@
 }
 
 .product-price {
-  color: #f095c4;
-  font-size: 2.1rem;
+  color: #f481bb;
+  font-size: 2.4rem;
 }
 
 .product-overview-name {
@@ -114,7 +131,7 @@
   background-color: rgba(249, 248, 248, 0.7);
   z-index: 10;
   position: relative;
-  top: -125px;
+  top: -170px;
   width: 80%;
   height: 120%;
 }
@@ -143,9 +160,10 @@
 }
 
 .filter-reset-button {
-  width: 40%;
+  width: 75vw;
   padding: 10px 0;
   margin: 30px auto;
+  margin-left: 12%;
   background-color: #f19cbd;
   color: white;
   cursor: pointer;
@@ -164,7 +182,7 @@
 }
 
 .filter-block {
-  margin-left: 20%;
+  margin-left: 12%;
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -189,10 +207,12 @@
   /* styles for phones */
   .product-page-title {
     margin-left: 10%;
+    font-size: 2rem;
+    width: 60vw;
   }
   .categories-div {
-    margin-left: 10px;
-    width: 90%;
+    margin-left: 15%;
+    flex-direction: column;
   }
   .sorting-div {
     width: 95%;

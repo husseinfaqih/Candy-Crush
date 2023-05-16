@@ -41,7 +41,7 @@ const ProductDisplay = ({
   }, [filterQuery]);
 
   return (
-    <div>
+    <div className="product-container">
       <Suspense fallback={<div>Loading Product Overview...</div>}>
         <div className="product-display-grid">
           {products &&
