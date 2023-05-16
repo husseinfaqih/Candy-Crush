@@ -12,11 +12,17 @@ export default function Categories() {
     performFetch();
   }, []);
   return (
-    <div className="category-div">
-      {categories &&
-        categories.map((category) => (
-          <Category key={category._id} {...category} />
-        ))}
+    <div className="category">
+      <div>
+        <h1 className="category-main-title">Categories</h1>
+      </div>
+
+      <div className="categories-container">
+        {categories &&
+          categories.map((category) => (
+            <Category key={category._id} {...category} />
+          ))}
+      </div>
     </div>
   );
 }

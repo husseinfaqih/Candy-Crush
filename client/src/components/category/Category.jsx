@@ -6,18 +6,16 @@ import { Link } from "react-router-dom";
 export default function Category({ image, categoryName, description }) {
   const link = `/products/${categoryName}`;
   return (
-    <div className="categories-container">
-      <img src={image} alt="" className="categories-image" />
-      <div className="categories-layer">
-        <div className="categories-text">
-          <h3 className="categories-header-text">{categoryName}</h3>
-          <span className="categories-description">{description}</span>
-        </div>
-      </div>
+    <div className="category-container">
+      <img src={image} alt="" className="category-image" />
 
-      <Link to={link}>
-        <button className="categories-button"> SHOP NOW </button>
-      </Link>
+      <div className="category-text-container">
+        <div className="category-title background">{categoryName}</div>
+        <div className="category-description background">{description}</div>
+        <Link to={link}>
+          <button className="category-button-main"> SHOP NOW </button>
+        </Link>
+      </div>
     </div>
   );
 }

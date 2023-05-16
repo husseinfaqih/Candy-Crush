@@ -1,12 +1,14 @@
 .promotion {
   width: 100%;
-  height: 400px;
+  height: 600px;
   display: flex;
   background-color: #05e0dc;
   position: relative;
 }
 
 .promotion-main-container {
+  position: relative;
+  top: 12%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +16,9 @@
 }
 
 .promotion-image {
+  position: relative;
   width: 30vw;
+  height: 600px;
   object-fit: cover;
 }
 
@@ -22,15 +26,19 @@
   color: white;
   width: 40vw;
   font-family: "Abril Fatface";
+  font-weight: 10;
   font-size: 3rem;
+  line-height: 3.3rem;
+  text-align: center;
 }
 
 .promotion-button {
   color: white;
   background-color: #f095c4;
   border: none;
+  font-family: "Comfortaa", cursive;
   font-size: 15px;
-  width: 130px;
+  width: 300px;
   height: 45px;
 }
 

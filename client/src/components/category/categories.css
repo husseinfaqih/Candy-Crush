@@ -1,8 +1,22 @@
-.category-div {
+/* .category-div {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  flex-direction: column;
   background-color: #fee588;
+}
+.category-title {
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
+  color: #fe97c4;
+  font-size: 3em;
+  margin: 5rem;
+  text-align: center;
+}
+.categories-main-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  justify-items: center;
+  margin-bottom: 5rem;
 }
 .categories-container {
   position: relative;
@@ -20,31 +34,33 @@
   object-fit: cover;
 }
 .categories-layer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, 10%);
+  position: relative;
+  bottom: 80%;
+  left: 13%;
   background: rgba(245, 245, 245, 0.7);
-  height: 300px;
-  width: 250px;
+  height: 400px;
+  width: 300px;
 }
 .categories-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   font-weight: bold;
   color: black;
   font-size: 24px;
   text-align: center;
 }
 .categories-header-text {
-  font-size: 20px;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
   color: #3f3e3e;
+  font-size: 2em;
+  text-align: center;
 }
 .categories-description {
-  font-size: 15px;
+  font-family: "Comfortaa", cursive;
+  font-size: 0.8em;
+  font-weight: 500;
   color: #3f3e3e;
+  padding: 2rem;
 }
 .categories-button {
   position: absolute;
@@ -67,4 +83,83 @@
   .categories-container {
     width: 300px;
   }
+} */
+
+.category {
+  height: 65rem;
+}
+.category-main-title {
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
+  color: #fe97c4;
+  font-size: 3em;
+  margin: 2rem;
+  text-align: center;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  grid-row-gap: 200px;
+  padding: 0 7rem 0 7rem;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.category-image {
+  width: 18rem;
+  height: 18rem;
+  object-fit: cover;
+}
+
+.category-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 13.5rem;
+  height: 15rem;
+  text-align: center;
+  position: absolute;
+  top: 10rem;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.category-title {
+  position: relative;
+  margin: 1rem;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
+  color: #3f3e3e;
+  font-size: 2em;
+}
+
+.category-description {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  font-weight: 400;
+  color: #3f3e3e;
+  width: 10rem;
+  height: 6rem;
+}
+
+.category-button-main {
+  background: none;
+  border: none;
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  font-weight: 800;
+  background-color: #fe97c4;
+  position: relative;
+  top: 5rem;
+}
+
+.category-button-main:hover {
+  color: red;
+  cursor: pointer;
 }

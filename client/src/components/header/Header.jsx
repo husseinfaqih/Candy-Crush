@@ -17,7 +17,7 @@ function Header({ page }) {
     <header
       className={page === "allProducts" ? "header-allProducts" : "header"}
     >
-      <div>
+      <div className="header-elements">
         <div className="navbar-main-elements">
           <Logo />
 
