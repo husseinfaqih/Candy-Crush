@@ -6,7 +6,7 @@ function PriceProductPage({ price }) {
 }
 
 PriceProductPage.propTypes = {
-  price: PropTypes.number.isRequired,
+  price: PropTypes.number,
 };
 
 export default PriceProductPage;
