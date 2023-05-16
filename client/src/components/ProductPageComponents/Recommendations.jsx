@@ -47,7 +47,7 @@ function RecommendationsProductPage({ category }) {
 }
 
 RecommendationsProductPage.propTypes = {
-  category: PropTypes.string.isRequired,
+  category: PropTypes.string,
 };
 
 export default RecommendationsProductPage;

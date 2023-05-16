@@ -12,6 +12,8 @@ import PriceProductPage from "../../components/ProductPageComponents/PriceProduc
 import DescriptionProductPage from "../../components/ProductPageComponents/DescriptionProductPage";
 import RecommendationsProductPage from "../../components/ProductPageComponents/Recommendations";
 import FavoriteIcon from "../../components/ProductDisplay/FavoriteIcon";
+import CreateReview from "../../components/ProductPageComponents/CreateReview";
+import ShowReview from "../../components/ProductPageComponents/ShowReview";
 
 function ProductPage() {
   const { id } = useParams();
@@ -29,29 +31,37 @@ function ProductPage() {
   }, [location]);
 
   useEffect(() => {
-    performFetch();
+    if (id) {
+      performFetch();
+    }
     return cancelFetch;
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Header />
-      <TitleProductPage title={product.productName} />
+      <TitleProductPage title={product?.productName} />
       <div className="product-page-rating">
-        <Rating productRating={product.rate} product={product} />
+        {product?.rate && (
+          <Rating productRating={product?.rate} product={product} />
+        )}
       </div>
-      <div className="product-page-center" key={product._id}>
-        <ImageProductPage image={product.image} />
+      <div className="product-page-center" key={product?._id}>
+        <ImageProductPage image={product?.image} />
         <div className="product-page-description-block">
-          <PriceProductPage price={product.price} />
-          <DescriptionProductPage description={product.description} />
+          <PriceProductPage price={product?.price} />
+          <DescriptionProductPage description={product?.description} />
           <div className="product-page-basket-favorite">
             <Basket product={product} />
             <FavoriteIcon product={product} />
           </div>
         </div>
       </div>
-      <RecommendationsProductPage category={product.category} />
+      {product !== undefined && <ShowReview product={product} />}
+      {product && <CreateReview product={product} />}
+      {product.category && (
+        <RecommendationsProductPage category={product.category} />
+      )}
       <Footer />
     </>
   );
