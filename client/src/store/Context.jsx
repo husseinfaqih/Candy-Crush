@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 import { cartReducer, defaultCartState } from "./Reducer";
 import PropTypes from "prop-types";
 
@@ -7,8 +7,16 @@ export const CartContext = createContext({});
 const CartProvider = (props) => {
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
-    defaultCartState
+    defaultCartState,
+    (initialState) => {
+      const storedCart = localStorage.getItem("cart");
+      return storedCart ? JSON.parse(storedCart) : initialState;
+    }
   );
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartState));
+  }, [cartState]);
 
   const addItemToCartHandler = (item) => {
     dispatchCartAction({ type: "ADD", item: item });
@@ -40,4 +48,5 @@ const CartProvider = (props) => {
 CartProvider.propTypes = {
   children: PropTypes.any,
 };
+
 export default CartProvider;

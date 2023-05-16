@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Rating from "../../components/ProductDisplay/Rating";
-import Favorite from "../../components/ProductDisplay/Favorite";
+import FavoriteIcon from "../../components/ProductDisplay/FavoriteIcon";
 import Basket from "../../components/ProductDisplay/Basket";
 import { CartContext } from "../../store/Context";
 import { useContext } from "react";
@@ -36,7 +36,7 @@ export default function Cart() {
                     <ProductTitleAndPrice product={product} />
                     <Rating productRating={product.rate} product={product} />
                     <div className="product-options">
-                      <Favorite />
+                      <FavoriteIcon product={product} />
                       <Basket product={product} />
                     </div>
                   </div>

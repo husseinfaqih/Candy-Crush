@@ -11,7 +11,7 @@ function DescriptionProductPage({ description }) {
 }
 
 DescriptionProductPage.propTypes = {
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };
 
 export default DescriptionProductPage;

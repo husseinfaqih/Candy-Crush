@@ -1,24 +1,31 @@
-import React from "react";
-import { BsCart } from "react-icons/bs";
+import React, { useContext } from "react";
+import { BsCartFill, BsCart } from "react-icons/bs";
 import PropTypes from "prop-types";
-import { useContext } from "react";
 import { CartContext } from "../../store/Context";
 
 const Basket = ({ product }) => {
   const cartCtx = useContext(CartContext);
+  const isInCart = cartCtx.items.some((item) => item._id === product._id);
 
   const submitHandler = () => {
-    cartCtx.addItem({ ...product, amount: 1 });
+    if (isInCart) {
+      cartCtx.removeItem(product._id);
+    } else {
+      cartCtx.addItem({ ...product, amount: 1 });
+    }
   };
+
   return (
     <div onClick={submitHandler} style={{ cursor: "pointer" }}>
-      <span style={{ fontSize: "20px" }}></span>
-      <BsCart size={40} />
+      <span style={{ fontSize: "20px" }}>
+        {isInCart ? <BsCartFill size={40} /> : <BsCart size={40} />}
+      </span>
     </div>
   );
 };
 
-export default Basket;
 Basket.propTypes = {
   product: PropTypes.object,
 };
+
+export default Basket;

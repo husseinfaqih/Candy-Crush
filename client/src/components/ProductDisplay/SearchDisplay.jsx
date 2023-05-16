@@ -1,7 +1,7 @@
 import React from "react";
 import ProductOverview from "./ProductOverview";
 import Rating from "./Rating";
-import Favorite from "./Favorite";
+import FavoriteIcon from "./FavoriteIcon";
 import Basket from "./Basket";
 import PropTypes from "prop-types";
 import ProductTitleAndPrice from "./ProductTitleAndPrice";
@@ -21,7 +21,7 @@ const SearchDisplay = ({ products }) => {
               <ProductTitleAndPrice product={product} />
               <Rating productRating={product.rate} product={product} />
               <div className="product-options">
-                <Favorite />
+                <FavoriteIcon product={product} />
                 <Basket product={product} />
               </div>
             </div>
