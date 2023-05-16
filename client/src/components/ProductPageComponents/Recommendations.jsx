@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import Rating from "../../components/ProductDisplay/Rating";
-import Favorite from "../ProductDisplay/FavoriteIcon";
+import FavoriteIcon from "../ProductDisplay/FavoriteIcon";
 import Basket from "../../components/ProductDisplay/Basket";
 import ProductTitleAndPrice from "../ProductDisplay/ProductTitleAndPrice";
 
@@ -34,7 +34,7 @@ function RecommendationsProductPage({ category }) {
                 <ProductTitleAndPrice product={product} />
                 <Rating productRating={product.rate} product={product} />
                 <div className="product-options">
-                  <Favorite />
+                  <FavoriteIcon product={product} />
                   <Basket product={product} />
                 </div>
               </div>
