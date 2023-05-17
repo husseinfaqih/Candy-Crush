@@ -6,6 +6,8 @@
   font-weight: 1;
 }
 .product-page-title {
+  font-family: "Abril Fatface";
+  font-weight: 100;
   color: #f19cbd;
   font-size: 3.5rem;
   margin-left: 12%;
@@ -62,6 +64,7 @@
   padding: 15px;
   background: none;
   border: 3px solid #f19cbd;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -104,12 +107,14 @@
 }
 
 .product-name {
-  font-weight: bold;
+  line-height: 20px;
+  font-family: "Abril Fatface", cursive;
 }
 
 .product-price {
   color: #f481bb;
   font-size: 2.4rem;
+  font-family: "Abril Fatface";
 }
 
 .product-overview-name {
@@ -155,21 +160,19 @@
   color: brown;
 }
 
-.on-sale-checkbox {
-  margin: 20px 0 0 0;
-  font-size: 1.1rem;
-}
-
 .filter-reset-button {
+  font-family: "Abril Fatface";
+  font-weight: 100;
   width: 75vw;
   padding: 10px 0;
   margin: 30px auto;
   margin-left: 12%;
   background-color: #f19cbd;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
 }
 
@@ -177,51 +180,71 @@
   background-color: #f19cbd;
 }
 
-.in-stock-checkbox {
-  margin: 20px 0 0 0;
+.on-sale-checkbox {
   font-size: 1.1rem;
+}
+
+.in-stock-checkbox {
+  font-size: 1.1rem;
+}
+.on-sale-checkbox:hover,
+.in-stock-checkbox:hover {
+  color: #f095c4;
 }
 
 .filter-block {
   margin-left: 12%;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75vw;
+  padding: 15px;
   border: 3px solid #f19cbd;
 }
 
 .price-slider {
   font-size: 1.1rem;
-  margin-left: 0;
   display: flex;
-  gap: 15px;
+  gap: 10px;
+  flex-direction: row;
 }
 
 #min,
 #max {
-  background-color: transparent;
+  background-color: #f095c4;
   border: none;
+  border-radius: 5px;
 }
-
+#min,
+#max,
+.on-sale-checkbox,
+.in-stock-checkbox {
+  font-family: "Comfortaa";
+}
 @media (max-width: 767px) {
   /* styles for phones */
   .product-page-title {
-    margin-left: 10%;
+    margin-left: 30%;
     font-size: 2rem;
     width: 60vw;
   }
   .categories-div {
-    margin-left: 15%;
+    margin-left: 20%;
     flex-direction: column;
   }
   .sorting-div {
     width: 95%;
-  }
-  .filter-block {
     margin-left: 10%;
   }
+  .filter-block,
+  .filter-reset-button {
+    margin-left: 20%;
+  }
+  .categories {
+    margin-left: 38%;
+  }
   .product-display-grid {
-    margin-left: 14%;
+    margin-left: 11%;
   }
 }
