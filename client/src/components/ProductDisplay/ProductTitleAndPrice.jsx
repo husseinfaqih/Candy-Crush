@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const ProductTitleAndPrice = ({ product }) => {
   return (
-    <div>
+    <div className="title-price">
       <p className="product-name">
         <Link className="product-overview-name" to={`/product/${product._id}`}>
           {product.productName}

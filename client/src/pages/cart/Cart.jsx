@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-
-import Rating from "../../components/ProductDisplay/Rating";
-import FavoriteIcon from "../../components/ProductDisplay/FavoriteIcon";
-import Basket from "../../components/ProductDisplay/Basket";
 import { CartContext } from "../../store/Context";
 import { useContext } from "react";
 import Header from "../../components/header/Header";
@@ -11,9 +7,13 @@ import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
 
 import Summary from "../../components/Summary/Summary";
+import { Link } from "react-router-dom";
+import "./Cart.css";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export default function Cart() {
-  const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
+  const { items, totalAmount, addItem, removeItem, resetCart } =
+    useContext(CartContext);
   const [isEmptyCart, setIsEmptyCart] = useState(true);
 
   useEffect(() => {
@@ -26,31 +26,47 @@ export default function Cart() {
     <>
       <Header />
       <div>
-        <div className="product-display-grid">
+        <div className="cart-header">
+          <h1>Shopping Cart</h1>
+          <Link to={"/products"}>CONTINUE SHOPPING</Link>
+        </div>
+        <div className="cart-bar">
+          <div className="cart-bar-items">
+            <p>Product</p>
+            <p>Price</p>
+            <p>Quantity</p>
+            <p>Total</p>
+          </div>
+        </div>
+        <div className="cart-items">
           {items &&
             items.map((product) => {
               return (
-                <div className="product-display-component" key={product._id}>
+                <div className="cart-item" key={product._id}>
                   <ProductOverview product={product} />
-                  <div className="white-background">
-                    <ProductTitleAndPrice product={product} />
-                    <Rating productRating={product.rate} product={product} />
-                    <div className="product-options">
-                      <FavoriteIcon product={product} />
-                      <Basket product={product} />
-                    </div>
+                  <ProductTitleAndPrice product={product} />
+                  <div className="cart-counter">
+                    <button onClick={() => removeItem(product._id)}>-</button>
+                    <span> {product.amount}</span>
+                    <button onClick={() => addItem({ ...product, amount: 1 })}>
+                      +
+                    </button>
                   </div>
-                  <span>amount : {product.amount}</span>
-                  <button onClick={() => addItem({ ...product, amount: 1 })}>
-                    + add
-                  </button>
-                  <button onClick={() => removeItem(product._id)}>
-                    - deduct
-                  </button>
+                  <p className="total-item-price">
+                    ${(product.price * product.amount).toFixed(2)}
+                  </p>
                 </div>
               );
             })}
         </div>
+        {items.length > 0 ? (
+          <button className="trash-icon" onClick={() => resetCart()}>
+            <BsFillTrashFill size={30} />
+          </button>
+        ) : (
+          ""
+        )}
+
         <Summary isEmptyCart={isEmptyCart} />
       </div>
       <Footer />
