@@ -87,7 +87,7 @@ const PaymentPage = () => {
         <div className="payment-button">
           {isCorrectPersonalData && !isCorrectPayment && (
             <PaymentForm
-              amount={totalAmount.toFixed(2)}
+              amount={totalAmount}
               setIsCorrectPayment={setIsCorrectPayment}
               setPaymentError={setPaymentError}
             />

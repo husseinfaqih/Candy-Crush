@@ -20,15 +20,16 @@ function CreateReview({ product }) {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const formData = {
-      reviewerName,
-      rating: parseInt(product.rate),
-      comment,
-    };
-
     performFetch({
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        reviewerName,
+        rating: parseInt(product.rate),
+        comment,
+      }),
     });
     setReviewerName("");
     setComment("");
