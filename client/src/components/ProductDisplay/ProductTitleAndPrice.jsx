@@ -11,7 +11,7 @@ const ProductTitleAndPrice = ({ product }) => {
         </Link>
       </p>
 
-      <p className="product-price">${product.price}</p>
+      <p className="product-price">€{product.price}</p>
     </div>
   );
 };

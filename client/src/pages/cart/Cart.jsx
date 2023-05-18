@@ -5,7 +5,6 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
-
 import Summary from "../../components/Summary/Summary";
 import { Link } from "react-router-dom";
 import "./Cart.css";

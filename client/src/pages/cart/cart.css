@@ -1,0 +1,21 @@
+.cart-options {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  position: relative;
+  top: -50px;
+  min-width: 100px;
+  width: 12vw;
+  gap: 8px;
+}
+.cart-options button {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: white;
+  width: 50%;
+  background-color: #f095c4;
+  cursor: pointer;
+}
