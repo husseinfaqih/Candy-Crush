@@ -108,8 +108,13 @@
   font-size: 1em;
   text-decoration: none;
 }
+.all-products-link:hover {
+  font-style: italic;
+  color: #fe97c4;
+}
+
 .all-products-link:active {
-  color: red;
+  color: black;
 }
 
 .header-category-title {
@@ -130,14 +135,15 @@
   font-family: "Comfortaa", cursive;
   font-size: 1em;
   line-height: 1.3rem;
-  font-style: italic;
+
   font-weight: 300;
-  display: inline-block; /* Display as inline block to remove the default list item bullet point */
+  display: inline-block;
   color: black;
 }
 
 .header-category-list-item a:hover {
   color: #fe97c4;
+  font-style: italic;
 }
 
 .header-favorites-button {
@@ -182,7 +188,19 @@
 .donut {
   position: relative;
   left: 50rem;
+  bottom: 2rem;
   margin: 0px;
+}
+
+.donut-one {
+  position: relative;
+  height: 10rem;
+}
+.donut-two {
+  position: relative;
+  height: 8rem;
+  top: 2rem;
+  right: 2rem;
 }
 
 .header-cart-button {
@@ -221,15 +239,14 @@
   font-family: "Comfortaa", cursive;
   font-size: 1em;
   line-height: 1.3rem;
-  font-style: italic;
   font-weight: 300;
   cursor: pointer;
-  display: inline-block; /* Display as inline block to remove the default list item bullet point */
-  color: black;
+  display: inline-block;
+  color: white;
 }
 
 .header-search-suggestion:hover {
-  color: black;
+  color: white;
   font-style: italic;
 }
 
@@ -246,52 +263,4 @@
 .invisible {
   opacity: 0;
   cursor: default;
-}
-
-@media (max-width: 767px) {
-  /* styles for phones */
-  .header {
-    height: 40vh;
-    justify-content: center;
-  }
-  .header-allProducts {
-    height: 20vh;
-  }
-  .header-logo {
-    margin-top: 20px;
-    left: 20px;
-    min-width: 70px;
-  }
-  .header-search-block {
-    width: 30vw;
-    margin: 50px 0px 0px 100px;
-  }
-  .header-search-suggestion-block {
-    top: 26%;
-  }
-  .header-title {
-    width: 100vw;
-    margin: 0;
-    font-size: 1.2rem;
-    line-height: normal;
-  }
-  .header-donut {
-    top: 0;
-    right: 0;
-    float: left;
-    width: 10vw;
-    min-width: 30px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .header-logo {
-    margin-top: 20px;
-    left: 20px;
-    min-width: 70px;
-  }
-  .header-title {
-    width: 60%;
-    font-size: 3rem;
-  }
 }

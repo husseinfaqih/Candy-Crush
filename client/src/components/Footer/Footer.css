@@ -16,20 +16,42 @@ footer {
 }
 
 .footer-information {
-  margin-left: 4%;
+  width: 100%;
+  padding: 0 7rem 0 7rem;
+}
+.footer-information div {
+  margin-bottom: 2rem;
 }
 
 .footer-information h4 {
-  margin-top: 50px;
-  margin-left: 40px;
-  font-weight: bold;
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  line-height: 1.3rem;
 }
-.footer-category {
-  display: flex;
+
+.footer-col {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  line-height: 1.3rem;
+  margin: 0;
+  padding: 0;
 }
 
 .footer-copyright {
-  margin: 30px 0 0 40px;
+  position: relative;
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  line-height: 1.3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-contact {
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  line-height: 1.3rem;
+  margin: 0;
+  padding: 0;
 }
 
 .heart {
@@ -38,15 +60,18 @@ footer {
 .footer-sugarRush {
   display: flex;
   flex-direction: column;
-  max-width: 20vw;
   align-items: center;
-  justify-content: center;
-  margin: 30px 50px;
+  justify-content: end;
+  padding: 0 7rem 0 7rem;
+  margin: 2rem 0 2rem 0;
 }
-.footer-logo {
-  min-width: 125px;
-  width: 15vw;
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
+  margin-top: 2rem;
 }
 .social-media img {
-  width: 45px;
+  width: 40px;
 }
