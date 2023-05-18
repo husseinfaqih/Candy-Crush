@@ -1,8 +1,17 @@
+.categories-div,
+.categories-div button,
+.sorting-button,
+.categories {
+  font-family: Comfortaa;
+  font-weight: 1;
+}
 .product-page-title {
+  font-family: "Abril Fatface";
+  font-weight: 100;
   color: #f19cbd;
-  font-size: 2.5rem;
-  margin-left: 40%;
-  width: 270px;
+  font-size: 3.5rem;
+  margin-left: 12%;
+  width: 470px;
 }
 
 .sortAndFilter {
@@ -16,11 +25,16 @@
   width: 0px;
   height: 0px;
 }
-
+.categories {
+  margin-left: 12%;
+}
 .categories-div {
-  margin-left: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 12%;
   margin-bottom: 30px;
-  width: 540px;
+  width: 75vw;
+  height: 120px;
 }
 
 .category-button {
@@ -37,17 +51,20 @@
 .sorting-div {
   display: flex;
   flex-direction: row;
-  width: 60vw;
+  width: 75vw;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  align-self: center;
+  margin-left: 12%;
   margin-bottom: 70px;
 }
 
 .sorting-button {
+  color: black;
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   background: none;
   border: 3px solid #f19cbd;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -55,13 +72,17 @@
   color: white;
   background-color: #f19cbd;
 }
-
+.product-container {
+  margin-left: 12%;
+  width: 80vw;
+  display: flex;
+}
 .product-display-grid {
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 75vw;
 }
 
 .header-categories {
@@ -86,12 +107,14 @@
 }
 
 .product-name {
-  font-weight: bold;
+  line-height: 20px;
+  font-family: "Abril Fatface", cursive;
 }
 
 .product-price {
-  color: #f095c4;
-  font-size: 2.1rem;
+  color: #f481bb;
+  font-size: 2.4rem;
+  font-family: "Abril Fatface";
 }
 
 .product-overview-name {
@@ -114,7 +137,7 @@
   background-color: rgba(249, 248, 248, 0.7);
   z-index: 10;
   position: relative;
-  top: -125px;
+  top: -170px;
   width: 80%;
   height: 120%;
 }
@@ -124,7 +147,7 @@
   display: flex;
   align-self: center;
   justify-content: space-evenly;
-  width: 100%;
+  width: 65%;
 }
 
 .product-overview div {
@@ -137,20 +160,19 @@
   color: brown;
 }
 
-.on-sale-checkbox {
-  margin: 20px 0 0 0;
-  font-size: 1.1rem;
-}
-
 .filter-reset-button {
-  width: 40%;
+  font-family: "Abril Fatface";
+  font-weight: 100;
+  width: 75vw;
   padding: 10px 0;
   margin: 30px auto;
+  margin-left: 12%;
   background-color: #f19cbd;
+  border-radius: 5px;
   color: white;
   cursor: pointer;
   border: none;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   letter-spacing: 2px;
 }
 
@@ -158,46 +180,71 @@
   background-color: #f19cbd;
 }
 
-.in-stock-checkbox {
-  margin: 20px 0 0 0;
+.on-sale-checkbox {
   font-size: 1.1rem;
 }
 
+.in-stock-checkbox {
+  font-size: 1.1rem;
+}
+.on-sale-checkbox:hover,
+.in-stock-checkbox:hover {
+  color: #f095c4;
+}
+
 .filter-block {
-  margin-left: 20%;
+  margin-left: 12%;
+  border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  width: 300px;
-  padding: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 75vw;
+  padding: 15px;
   border: 3px solid #f19cbd;
 }
 
 .price-slider {
   font-size: 1.1rem;
-  margin-left: 0;
   display: flex;
-  gap: 15px;
+  gap: 10px;
+  flex-direction: row;
 }
 
 #min,
 #max {
-  background-color: transparent;
+  background-color: #f095c4;
   border: none;
+  border-radius: 5px;
 }
-
+#min,
+#max,
+.on-sale-checkbox,
+.in-stock-checkbox {
+  font-family: "Comfortaa";
+}
 @media (max-width: 767px) {
   /* styles for phones */
   .product-page-title {
-    margin-left: 10%;
+    margin-left: 30%;
+    font-size: 2rem;
+    width: 60vw;
   }
   .categories-div {
-    margin-left: 10px;
-    width: 90%;
+    margin-left: 20%;
+    flex-direction: column;
   }
   .sorting-div {
     width: 95%;
-  }
-  .filter-block {
     margin-left: 10%;
+  }
+  .filter-block,
+  .filter-reset-button {
+    margin-left: 20%;
+  }
+  .categories {
+    margin-left: 38%;
+  }
+  .product-display-grid {
+    margin-left: 11%;
   }
 }
