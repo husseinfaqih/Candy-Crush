@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductDisplay from "../../components/ProductDisplay/ProductDisplay";
 import SortAndFilter from "../../components/Sort And Filter/SortAndFilter";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import "./allProducts.css";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const AllProduct = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const [sortBy, setSortBy] = useState("");
   const [sortOrder, setSortOrder] = useState("");
   const [filterQueryChanged, setFilterQueryChanged] = useState(false);

@@ -4,7 +4,6 @@ import { useLocation, useParams } from "react-router-dom";
 import Header from "../../components/header/Header";
 import Footer from "../../components/Footer/Footer";
 import Rating from "../../components/ProductDisplay/Rating";
-import Favorite from "../../components/ProductDisplay/Favorite";
 import Basket from "../../components/ProductDisplay/Basket";
 import "./ProductPage.css";
 import TitleProductPage from "../../components/ProductPageComponents/TitleProductPage";
@@ -12,6 +11,9 @@ import ImageProductPage from "../../components/ProductPageComponents/ImageProduc
 import PriceProductPage from "../../components/ProductPageComponents/PriceProductPage";
 import DescriptionProductPage from "../../components/ProductPageComponents/DescriptionProductPage";
 import RecommendationsProductPage from "../../components/ProductPageComponents/Recommendations";
+import FavoriteIcon from "../../components/ProductDisplay/FavoriteIcon";
+import CreateReview from "../../components/ProductPageComponents/CreateReview";
+import ShowReview from "../../components/ProductPageComponents/ShowReview";
 
 function ProductPage() {
   const { id } = useParams();
@@ -29,29 +31,40 @@ function ProductPage() {
   }, [location]);
 
   useEffect(() => {
-    performFetch();
+    if (id) {
+      performFetch();
+    }
     return cancelFetch;
-  }, []);
+  }, [id]);
 
   return (
     <>
       <Header />
-      <TitleProductPage title={product.productName} />
+      <TitleProductPage title={product?.productName} />
       <div className="product-page-rating">
-        <Rating productRating={product.rate} product={product} />
+        {product?.rate && (
+          <Rating productRating={product?.rate} product={product} />
+        )}
       </div>
-      <div className="product-page-center" key={product._id}>
-        <ImageProductPage image={product.image} />
+      <div className="product-page-center" key={product?._id}>
+        <ImageProductPage image={product?.image} />
         <div className="product-page-description-block">
-          <PriceProductPage price={product.price} />
-          <DescriptionProductPage description={product.description} />
+          <PriceProductPage price={product?.price} />
+          <DescriptionProductPage description={product?.description} />
           <div className="product-page-basket-favorite">
-            <Basket product={product} />
-            <Favorite />
+            <div className="product-page-basket">
+              <Basket product={product} />
+              <span className="product-page-basket-text"> ADD TO CART</span>
+            </div>
+            <FavoriteIcon product={product} />
           </div>
         </div>
       </div>
-      <RecommendationsProductPage category={product.category} />
+      {product !== undefined && <ShowReview product={product} />}
+      {product && <CreateReview product={product} />}
+      {product.category && (
+        <RecommendationsProductPage category={product.category} />
+      )}
       <Footer />
     </>
   );

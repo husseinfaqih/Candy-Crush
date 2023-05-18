@@ -28,6 +28,7 @@ function SearchBar() {
           if (event.key === "Enter") {
             handleSearch();
             setSearchWord("");
+            setSuggestions([]);
           }
         }}
       ></input>

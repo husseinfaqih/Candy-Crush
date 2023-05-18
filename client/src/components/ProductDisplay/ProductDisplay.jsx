@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import PropTypes from "prop-types";
 import Rating from "./Rating";
-import Favorite from "./Favorite";
+import FavoriteICon from "./FavoriteIcon";
 import Basket from "./Basket";
 import ProductTitleAndPrice from "./ProductTitleAndPrice";
 import useFetch from "../../hooks/useFetch";
@@ -41,7 +41,7 @@ const ProductDisplay = ({
   }, [filterQuery]);
 
   return (
-    <div>
+    <div className="product-container">
       <Suspense fallback={<div>Loading Product Overview...</div>}>
         <div className="product-display-grid">
           {products &&
@@ -53,7 +53,7 @@ const ProductDisplay = ({
                     <ProductTitleAndPrice product={product} />
                     <Rating productRating={product.rate} product={product} />
                     <div className="product-options">
-                      <Favorite />
+                      <FavoriteICon product={product} />
                       <Basket product={product} />
                     </div>
                   </div>

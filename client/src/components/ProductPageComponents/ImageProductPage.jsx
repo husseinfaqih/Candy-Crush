@@ -6,7 +6,7 @@ function ImageProductPage({ image }) {
 }
 
 ImageProductPage.propTypes = {
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default ImageProductPage;

@@ -1,37 +1,41 @@
 .product-page-center {
-  margin: 30px 0 0 15.25%;
+  margin: 74px 12% 0;
   display: flex;
 }
 
 .product-page-title {
-  width: 70%;
-  margin: 30px 0 0 15.25%;
-  font-size: 2.6rem;
-  line-height: 2.8rem;
+  width: 76%;
+  margin: 147px auto 0 auto;
+  font-size: 3.6rem;
+  line-height: 3.6rem;
+  font-weight: 400;
+  font-family: "Abril Fatface", cursive;
 }
 
 .product-page-rating {
-  margin: 30px 0 0 15.25%;
+  margin: 38px 0 0 12%;
 }
 
 .product-page-image {
-  width: 35%;
+  width: 33%;
   object-fit: contain;
+  margin: 0 0 auto 0;
 }
 
 .product-page-description-block {
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 5%;
+  margin: 0 0 0 7%;
   width: 45%;
 }
 
 .product-page-price {
-  font-size: 2.6rem;
-  line-height: 2.8rem;
+  font-size: 3.6rem;
+  line-height: 3.6rem;
   color: #f19cbd;
-  font-weight: 900;
+  font-weight: 400;
   margin: 0;
+  font-family: "Comfortaa", cursive;
 }
 
 .product-page-description-title {
@@ -39,35 +43,55 @@
   line-height: 1.5rem;
   font-weight: 500;
   letter-spacing: 3px;
-  margin: 60px 0 0 0;
+  margin: 25px 0 0 0;
+  font-family: "Comfortaa", cursive;
 }
 
 .product-page-description {
   font-size: 1.1rem;
-  line-height: 1.3rem;
+  line-height: 1.6rem;
   font-weight: 400;
-  margin: 60px 0 0 0;
+  margin: 25px 0 0 0;
+  font-family: "Comfortaa", cursive;
 }
 
 .product-page-basket-favorite {
-  margin: 60px 0 0 0;
+  margin: 16px 0 0 0;
   display: flex;
   gap: 40px;
 }
 
+.product-page-basket {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f19cbd;
+  padding: 3px;
+}
+
+.product-page-basket-text {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: "Comfortaa", cursive;
+}
+
 .product-page-recommend-block {
-  margin: 60px 0 60px 15.25%;
+  margin: 172px 12% 60px 12%;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 55px;
 }
 
 .product-page-recommend-title {
-  margin: 60px 0;
+  margin: 0;
   width: 100%;
   font-size: 2.9rem;
   line-height: 3.1rem;
   color: #f19cbd;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 400;
 }
 
 .search-result-page-title {
@@ -79,23 +103,128 @@
   color: #f19cbd;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+.show-review-block {
+  margin: 60px 12% 60px;
+  font-family: "Comfortaa", cursive;
+}
+
+.show-review-title {
+  font-size: 2.2rem;
+  line-height: 2.4rem;
+  color: #f19cbd;
+  font-weight: 900;
+}
+
+.show-review-name {
+  background-color: #f19cbd;
+  color: white;
+  display: inline-block;
+  padding: 5px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.show-review-comment {
+  border: 2px solid #f19cbd;
+  padding: 15px;
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.create-review-leave-button {
+  display: block;
+  margin: 30px auto;
+  width: 30%;
+  background-color: #f19cbd;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.review-adding-block {
+  margin: 60px 12% 0;
+  font-family: "Comfortaa", cursive;
+}
+
+.review-adding-label {
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.review-adding-text {
+  border: none;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.review-adding-textarea {
+  border: none;
+  width: 200%;
+  padding: 5px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.review-adding-submit {
+  width: 30%;
+  background-color: #f19cbd;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.review-adding-confirm {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: #f19cbd;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
   .product-page-title {
-    margin: 80px 0 0 15.25%;
-    border: 1px solid red;
+    margin: 80px 0 0 12%;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 769px) {
   .product-page-center {
     display: flex;
     flex-direction: column;
+    margin: 74px 2% 0;
   }
   .product-page-image {
     width: 80%;
   }
   .product-page-description-block {
     width: 80%;
-    margin: 20px 0 0 5%;
+    margin: 20px 0 0 2%;
+  }
+  .review-adding-textarea {
+    width: 100%;
+  }
+  .product-page-title {
+    width: 96%;
+  }
+  .product-page-rating {
+    margin: 38px 0 0 2%;
+  }
+  .product-page-recommend-block {
+    margin: 172px 2% 60px 2%;
+    gap: 15px;
+  }
+  .show-review-block {
+    margin: 60px 2% 60px;
+  }
+  .review-adding-block {
+    margin: 60px 2% 0;
   }
 }
