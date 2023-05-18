@@ -92,46 +92,16 @@
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
-  .promotion {
-    height: 20vh;
-  }
-
+@media (max-width: 600px) {
   .promotion-title {
-    font-size: 1.3rem;
     width: 60vw;
-  }
-  .promotion-button {
-    width: 120px;
-    height: 40px;
-    font-size: 0.8rem;
-  }
-  .promotion-popup {
-    width: 85vw;
-    left: 5%;
-    height: 70vh;
-  }
-  .promotion-popup-text {
-    font-size: 1rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* styles for tablets */
-  .promotion-title {
-    font-size: 3rem;
-  }
+@media (max-width: 500px) {
   .promotion-button {
-    width: 150px;
-    height: 60px;
-    font-size: 1.1rem;
-  }
-  .promotion-popup {
-    width: 80vw;
-    height: 50vh;
-    left: 5%;
-  }
-  .promotion-popup-text {
-    font-size: 1.4rem;
+    width: 200px;
   }
 }
