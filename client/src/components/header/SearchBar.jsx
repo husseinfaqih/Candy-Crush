@@ -20,7 +20,7 @@ function SearchBar() {
   return (
     <>
       <input
-        placeholder="Search"
+        placeholder="Search | "
         className="header-search-input"
         value={searchWord}
         onChange={handleInputChange}

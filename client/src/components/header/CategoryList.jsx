@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import useFetch from "../../hooks/useFetch";
-import arrow from "../../assets/arrow.svg";
 import { Link } from "react-router-dom";
+import { MdExpandMore } from "react-icons/md";
+
 function CategoryList({ page }) {
   const [categories, setCategories] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -29,11 +30,12 @@ function CategoryList({ page }) {
       }
     >
       <p className="header-category-title">Categories</p>
-      <img
+
+      <MdExpandMore
         onClick={clickArrow}
         className="header-category-arrow"
-        src={arrow}
         alt="arrow"
+        size={30}
       />
       {isVisible && (
         <ul

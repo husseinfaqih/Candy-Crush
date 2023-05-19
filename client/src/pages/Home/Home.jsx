@@ -9,7 +9,6 @@ const Home = () => {
     <div>
       <Header />
       <Promotion />
-      <h1 style={{ textAlign: "center" }}>Categories</h1>
       <Categories />
       <Footer />
     </div>

@@ -1,12 +1,14 @@
 .promotion {
   width: 100%;
-  height: 400px;
+  height: 600px;
   display: flex;
   background-color: #05e0dc;
   position: relative;
 }
 
 .promotion-main-container {
+  position: relative;
+  top: 12%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,55 +16,74 @@
 }
 
 .promotion-image {
+  position: relative;
   width: 30vw;
+  height: 600px;
   object-fit: cover;
 }
 
 .promotion-title {
   color: white;
   width: 40vw;
-  font-size: 3.7rem;
+  font-family: "Abril Fatface";
+  font-weight: 10;
+  font-size: 3rem;
+  line-height: 3.3rem;
+  text-align: center;
 }
 
 .promotion-button {
   color: white;
   background-color: #f095c4;
   border: none;
+  font-family: "Comfortaa", cursive;
   font-size: 15px;
-  width: 130px;
+  width: 300px;
   height: 45px;
 }
 
 .promotion-button:hover {
+  font-style: italic;
   cursor: pointer;
 }
 
 .promotion-popup {
   position: absolute;
-  left: 30%;
-  top: 25%;
+  left: 40rem;
+  top: 0rem;
   background-color: #f095c4;
   color: white;
-  width: 40vw;
-  height: 70vh;
+  width: 47vw;
+  height: 600px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  box-shadow: 4px -4px black;
-  border-radius: 20px;
 }
 
 .promotion-popup-text {
-  font-size: 1.2rem;
-  padding: 5px;
+  font-family: "Comfortaa", cursive;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 300;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  text-align: center;
+  position: relative;
+  top: 3rem;
 }
 
 .promotion-popup-link {
-  margin: 0 auto;
-  font-size: 2rem;
+  font-family: "Comfortaa", cursive;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 1rem;
   text-decoration: none;
   color: white;
+}
+
+.promotion-popup-link:hover {
+  font-style: italic;
 }
 
 .promotion-popup-multiply {
@@ -71,46 +92,16 @@
   cursor: pointer;
 }
 
-@media (max-width: 767px) {
-  .promotion {
-    height: 20vh;
-  }
-
+@media (max-width: 600px) {
   .promotion-title {
-    font-size: 1.3rem;
     width: 60vw;
-  }
-  .promotion-button {
-    width: 120px;
-    height: 40px;
-    font-size: 0.8rem;
-  }
-  .promotion-popup {
-    width: 85vw;
-    left: 5%;
-    height: 70vh;
-  }
-  .promotion-popup-text {
-    font-size: 1rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-  /* styles for tablets */
-  .promotion-title {
-    font-size: 3rem;
-  }
+@media (max-width: 500px) {
   .promotion-button {
-    width: 150px;
-    height: 60px;
-    font-size: 1.1rem;
-  }
-  .promotion-popup {
-    width: 80vw;
-    height: 50vh;
-    left: 5%;
-  }
-  .promotion-popup-text {
-    font-size: 1.4rem;
+    width: 200px;
   }
 }

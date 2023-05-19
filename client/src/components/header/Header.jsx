@@ -17,22 +17,33 @@ function Header({ page }) {
     <header
       className={page === "allProducts" ? "header-allProducts" : "header"}
     >
-      <Logo />
-      <div className="header-search-block">
-        <SearchBar />
-        <CategoryList page={page} />
-        <div className="header-buttons">
-          <AllProductsLink page={page} />
-          <div className="cart-and-favorites-buttons">
-            <FavoriteButton />
-            <CartButton />
+      <div className="header-elements">
+        <div className="navbar-main-elements">
+          <Logo />
+
+          <div className="sections">
+            <div className="top-section">
+              <SearchBar />
+              <div className="cart-and-favorites-buttons">
+                <FavoriteButton />
+                <CartButton />
+              </div>
+            </div>
+
+            <div className="bottom-section">
+              <CategoryList page={page} />
+              <AllProductsLink page={page} />
+            </div>
           </div>
         </div>
+        <div className="donut">
+          {" "}
+          <DonutOne />
+          <DonutTwo />
+        </div>
+
+        <MainTitle page={page} />
       </div>
-      {/* <LoginButton /> */}
-      <DonutOne />
-      <DonutTwo />
-      <MainTitle page={page} />
     </header>
   );
 }

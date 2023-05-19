@@ -18,7 +18,11 @@ const Basket = ({ product }) => {
   return (
     <div onClick={submitHandler} style={{ cursor: "pointer" }}>
       <span style={{ fontSize: "20px" }}>
-        {isInCart ? <BsCartFill size={40} /> : <BsCart size={40} />}
+        {isInCart ? (
+          <BsCartFill className="header-cart-button-image" size={40} />
+        ) : (
+          <BsCart size={40} />
+        )}
       </span>
     </div>
   );

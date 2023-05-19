@@ -7,7 +7,7 @@ const AllProductsLink = ({ page }) => {
     <div>
       <Link
         to="/products"
-        className={page === "allProducts" ? "invisible" : "nav-buttons"}
+        className={page === "allProducts" ? "invisible" : "all-products-link"}
       >
         All Products
       </Link>
