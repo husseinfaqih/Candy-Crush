@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import StripeCheckout from "react-stripe-checkout";
 import useFetch from "../hooks/useFetch";
@@ -9,8 +9,9 @@ const PaymentForm = ({ amount, setIsCorrectPayment, setPaymentError }) => {
   const [error, setError] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [key, setKey] = useState("");
+  const [mounted, setMounted] = useState(true);
 
-  const { performFetch } = useFetch("/charge", (data) => {
+  const { performFetch, cancelFetch } = useFetch("/charge", (data) => {
     if (data.success && data.result.client_secret) {
       setPaymentError(false);
       setIsCorrectPayment(true);
@@ -18,6 +19,13 @@ const PaymentForm = ({ amount, setIsCorrectPayment, setPaymentError }) => {
       setPaymentError(true);
     }
   });
+
+  useEffect(() => {
+    return () => {
+      setMounted(false);
+      cancelFetch();
+    };
+  }, []);
 
   const handlePayment = async (token) => {
     setIsLoading(true);
@@ -29,17 +37,19 @@ const PaymentForm = ({ amount, setIsCorrectPayment, setPaymentError }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: amount * 100,
+          amount: parseInt(amount * 100),
           currency: "eur",
           token,
         }),
       });
-      setKey(response);
+      if (mounted) {
+        setKey(response);
+      }
     } catch (error) {
-      setError(error);
-      setPaymentError(true);
-      // eslint-disable-next-line no-console
-      console.log(error);
+      if (mounted) {
+        setError(error);
+        setPaymentError(true);
+      }
     }
     setIsLoading(false);
   };
