@@ -17,11 +17,11 @@ const FavoriteIcon = ({ product }) => {
   };
 
   return (
-    <div onClick={handleClick}>
+    <div className="favorite-icon" onClick={handleClick}>
       {isFavorite ? (
-        <MdFavorite size={40} style={{ color: "red" }} />
+        <MdFavorite size={40} style={{ color: "#f095c4" }} />
       ) : (
-        <MdFavoriteBorder size={40} style={{ color: "red" }} />
+        <MdFavoriteBorder size={40} style={{ color: "black" }} />
       )}
     </div>
   );

@@ -68,3 +68,23 @@ footer {
 .social-media img {
   width: 40px;
 }
+
+@media (max-width: 750px) {
+  footer {
+    flex-direction: column;
+  }
+  .footer-sugarRush {
+    display: flex;
+    flex-direction: row;
+
+    width: 26.5rem;
+    padding: 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-sugarRush {
+    display: flex;
+    flex-direction: column;
+  }
+}

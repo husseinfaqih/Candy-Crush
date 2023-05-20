@@ -7,7 +7,7 @@ import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
 import Summary from "../../components/Summary/Summary";
 import { Link } from "react-router-dom";
-import "./Cart.css";
+import "./cart.css";
 import { BsFillTrashFill } from "react-icons/bs";
 
 export default function Cart() {

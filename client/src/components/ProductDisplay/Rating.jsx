@@ -58,7 +58,7 @@ const Rating = ({ productRating, product }) => {
         </span>
       ))}
       {selectedRating > 0 && (
-        <p>
+        <p className="thanks-rating">
           Thank you for your rating! You&apos;ve selected {selectedRating}{" "}
           star(s) for this product. Your feedback is greatly appreciated and
           will help us improve our services.
