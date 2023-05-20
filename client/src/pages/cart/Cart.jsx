@@ -7,7 +7,7 @@ import ProductOverview from "../../components/ProductDisplay/ProductOverview";
 import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAndPrice";
 import Summary from "../../components/Summary/Summary";
 import { Link } from "react-router-dom";
-import "./Cart.css";
+import "./cart.css";
 import { BsFillTrashFill } from "react-icons/bs";
 
 export default function Cart() {
@@ -52,7 +52,7 @@ export default function Cart() {
                     </button>
                   </div>
                   <p className="total-item-price">
-                    ${(product.price * product.amount).toFixed(2)}
+                    €{(product.price * product.amount).toFixed(2)}
                   </p>
                 </div>
               );
