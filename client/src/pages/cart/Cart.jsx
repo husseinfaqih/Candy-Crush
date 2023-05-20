@@ -52,7 +52,7 @@ export default function Cart() {
                     </button>
                   </div>
                   <p className="total-item-price">
-                    ${(product.price * product.amount).toFixed(2)}
+                    €{(product.price * product.amount).toFixed(2)}
                   </p>
                 </div>
               );

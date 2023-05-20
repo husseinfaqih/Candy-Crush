@@ -37,7 +37,10 @@
   letter-spacing: 1px;
   font-size: 1.4rem;
 }
-
+.favorite-icon {
+  cursor: pointer;
+  color: red;
+}
 @media (min-width: 500px) and (max-width: 790px) {
   .favorite-block {
     width: 60%;
