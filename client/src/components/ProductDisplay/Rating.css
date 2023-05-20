@@ -1,3 +1,9 @@
 .hover-star {
-  color: yellow;
+  color: #f095c4;
+}
+
+.thanks-rating {
+  border: none;
+  font-family: "Comfortaa", cursive;
+  font-size: 15px;
 }

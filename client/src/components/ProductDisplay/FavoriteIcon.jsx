@@ -18,7 +18,11 @@ const FavoriteIcon = ({ product }) => {
 
   return (
     <div className="favorite-icon" onClick={handleClick}>
-      {isFavorite ? <MdFavorite size={40} /> : <MdFavoriteBorder size={40} />}
+      {isFavorite ? (
+        <MdFavorite size={40} style={{ color: "#f095c4" }} />
+      ) : (
+        <MdFavoriteBorder size={40} style={{ color: "black" }} />
+      )}
     </div>
   );
 };
