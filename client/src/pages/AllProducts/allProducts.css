@@ -225,9 +225,9 @@
 @media (max-width: 767px) {
   /* styles for phones */
   .product-page-title {
-    margin-left: 30%;
+    margin-left: 33%;
+    margin-top: 0;
     font-size: 2rem;
-    width: 60vw;
   }
   .categories-div {
     margin-left: 20%;
