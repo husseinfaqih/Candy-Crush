@@ -5,7 +5,6 @@
 
 .product-page-title {
   width: 76%;
-  margin: 147px auto 0 auto;
   font-size: 3.6rem;
   line-height: 3.6rem;
   font-weight: 400;
@@ -212,7 +211,8 @@
     width: 100%;
   }
   .product-page-title {
-    width: 96%;
+    width: 60vw;
+    font-size: 1.9rem;
   }
   .product-page-rating {
     margin: 38px 0 0 2%;

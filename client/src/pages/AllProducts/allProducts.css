@@ -239,26 +239,34 @@ input[type="number"] {
 @media (max-width: 767px) {
   /* styles for phones */
   .product-page-title {
-    margin-left: 30%;
+    margin-left: 29%;
+    margin-top: 0;
     font-size: 2rem;
-    width: 60vw;
   }
   .categories-div {
-    margin-left: 20%;
+    margin-left: 15%;
     flex-direction: column;
   }
   .sorting-div {
     width: 95%;
-    margin-left: 10%;
+    margin-left: 7%;
   }
   .filter-block,
   .filter-reset-button {
     margin-left: 20%;
   }
   .categories {
-    margin-left: 38%;
+    margin-left: 33%;
   }
   .product-display-grid {
     margin-left: 11%;
+  }
+  .price-slider {
+    flex-direction: column;
+  }
+  #min,
+  #max {
+    height: 1.5rem;
+    width: 5.5rem;
   }
 }
