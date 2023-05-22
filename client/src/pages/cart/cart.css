@@ -113,3 +113,46 @@
   font-weight: bold;
 }
 /* End of cart items styles */
+
+/* Start Responsive... */
+@media (max-width: 769px) {
+  .cart-bar {
+    display: none;
+  }
+  .cart-header {
+    padding-bottom: 15px;
+  }
+  .total-item-price {
+    display: none;
+  }
+  .cart-items {
+    display: block;
+  }
+  .cart-item {
+    display: block;
+    width: fit-content;
+    height: 450px;
+  }
+  .cart-item img {
+    width: 200px;
+    height: auto;
+  }
+  .cart-item .product-price {
+    position: absolute;
+    left: 30%;
+    top: 68%;
+  }
+  .cart-item .cart-counter {
+    position: absolute;
+    right: 33%;
+    bottom: 2%;
+    top: 90%;
+    border: 1px solid black;
+    padding: 2px 15px;
+  }
+  .product-name {
+    margin: 0;
+  }
+}
+
+/* The end of Responsive..... */
