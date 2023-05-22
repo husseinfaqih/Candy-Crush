@@ -46,7 +46,7 @@ export default function Cart() {
                   <ProductTitleAndPrice product={product} />
                   <div className="cart-counter">
                     <button onClick={() => removeItem(product._id)}>-</button>
-                    <span> {product.amount}</span>
+                    <span className="product-amount"> {product.amount}</span>
                     <button onClick={() => addItem({ ...product, amount: 1 })}>
                       +
                     </button>
