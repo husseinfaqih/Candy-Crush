@@ -13,9 +13,10 @@
   margin: 20px auto;
   font-size: 2rem;
   line-height: 2.1rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 2px;
   color: black;
+  font-family: "Abril Fatface";
 }
 
 .payment-text {
@@ -28,13 +29,17 @@
   display: flex;
   flex-direction: column;
   letter-spacing: 2px;
+  font-family: "Comfortaa";
 }
 
 .payment-subtitle {
-  margin: 10px auto;
-  font-size: 1.3rem;
+  margin: 20px auto;
+  font-size: 1.4rem;
   line-height: 1.5rem;
-  color: #fe97c4;
+  color: white;
+  width: 80%;
+  font-style: italic;
+  font-family: "Comfortaa";
 }
 
 .payment-text-black {

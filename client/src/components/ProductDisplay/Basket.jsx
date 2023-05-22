@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BsCartFill, BsCart } from "react-icons/bs";
+import { FiShoppingCart } from "react-icons/fi";
 import PropTypes from "prop-types";
 import { CartContext } from "../../store/Context";
 
@@ -19,9 +19,13 @@ const Basket = ({ product }) => {
     <div onClick={submitHandler} style={{ cursor: "pointer" }}>
       <span style={{ fontSize: "20px" }}>
         {isInCart ? (
-          <BsCartFill className="header-cart-button-image" size={40} />
+          <FiShoppingCart
+            className="header-cart-button-image"
+            size={40}
+            color="#f095c4"
+          />
         ) : (
-          <BsCart size={40} />
+          <FiShoppingCart size={40} />
         )}
       </span>
     </div>

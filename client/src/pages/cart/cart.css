@@ -8,8 +8,10 @@
 }
 .cart-header h1 {
   color: #fe97c4;
-  position: absolute;
-  left: 15%;
+  font-family: "Abril Fatface";
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 .cart-header a {
   position: absolute;
@@ -17,6 +19,7 @@
   text-decoration: none;
   border: 2px solid #fe97c4;
   padding: 7px;
+  font-family: "Comfortaa";
 }
 .cart-header a:hover {
   color: white;
@@ -24,8 +27,6 @@
 }
 
 /* End of cart header styles */
-
-/* -------------------------------------- */
 
 /* Start of cart bar styles */
 .cart-bar {
@@ -106,5 +107,10 @@
 }
 .trash-icon:hover {
   color: #fe97c4;
+}
+.product-amount {
+  font-family: "Comfortaa";
+  font-size: 17px;
+  font-weight: bold;
 }
 /* End of cart items styles */
