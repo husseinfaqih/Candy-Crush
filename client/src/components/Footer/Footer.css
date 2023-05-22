@@ -76,8 +76,6 @@ footer {
   .footer-sugarRush {
     display: flex;
     flex-direction: row;
-
-    width: 26.5rem;
     padding: 0;
   }
 }

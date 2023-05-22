@@ -1,14 +1,23 @@
 .personal-form {
   display: flex;
-  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  width: 600px;
+  width: 100%;
+}
+
+.personal-form-div {
+  width: 65%;
+  padding: 0 2rem;
 }
 
 .personal-input {
-  margin: 0 auto;
-  width: 50%;
-  height: 25px;
+  height: 2rem;
+  font-family: "Comfortaa";
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: black;
 }
 
 .input-warn {
@@ -21,25 +30,29 @@
 }
 
 .personal-form-label {
-  margin: 5px auto;
-  font-size: 1.1rem;
-  line-height: 1.3rem;
-  color: black;
-  font-weight: 300;
-  letter-spacing: 2px;
   font-family: "Comfortaa";
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  padding: 1rem;
 }
 
 .personal-info-button {
-  margin: 30px auto 30px;
-  width: 100%;
+  font-family: "Comfortaa", cursive;
+  font-size: 15px;
+  margin: 2rem;
+  width: 30%;
   height: 40px;
   background-color: #fee588;
   cursor: pointer;
   color: #f19cbd;
   letter-spacing: 2px;
-  font-size: 1.4rem;
   border: none;
+}
+
+.personal-info-button:hover {
+  font-style: italic;
 }
 
 @media (max-width: 1024px) {

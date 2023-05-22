@@ -1,24 +1,24 @@
 /* Start of cart header styles */
 .cart-header {
   display: flex;
-  align-items: center;
-  padding-top: 50px;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 20% 0 15%;
+  align-items: center;
+  width: 100%;
+  padding: 0 18rem 0 14rem;
 }
 .cart-header h1 {
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
   color: #fe97c4;
-  font-family: "Abril Fatface";
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-size: 3em;
+  line-height: 3.3rem;
 }
 .cart-header a {
   text-decoration: none;
   border: 2px solid #fe97c4;
   padding: 7px;
   font-family: "Comfortaa";
+  color: black;
 }
 .cart-header a:hover {
   color: white;
@@ -34,14 +34,14 @@
   padding-left: 15%;
 }
 .cart-bar-items {
+  font-family: "Comfortaa", cursive;
+  font-size: 15px;
   display: flex;
   background-color: #fe97c4;
   justify-content: space-around;
   color: white;
   font-size: 22px;
   letter-spacing: 1px;
-  font-family: "Comfortaa";
-  line-height: 100%;
 }
 /* End of  cart bar styles  */
 
@@ -73,7 +73,6 @@
   position: absolute;
   left: 35%;
   top: 50%;
-  font-family: "Comfortaa";
 }
 .cart-item .cart-counter {
   position: absolute;
@@ -93,11 +92,10 @@
 }
 .total-item-price {
   position: absolute;
-  right: 10%;
-  top: 50%;
-  font-size: 2.4rem;
+  right: 6%;
+  font-family: "Comfortaa", cursive;
+  font-size: 2.1rem;
   color: #fe97c4;
-  font-family: "Comfortaa";
 }
 .trash-icon {
   position: absolute;
@@ -115,7 +113,7 @@
   font-weight: bold;
 }
 /* End of cart items styles */
-/* -------------------------------------- */
+
 /* Start Responsive... */
 @media (max-width: 769px) {
   .cart-bar {

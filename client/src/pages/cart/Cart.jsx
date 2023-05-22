@@ -8,7 +8,7 @@ import ProductTitleAndPrice from "../../components/ProductDisplay/ProductTitleAn
 import Summary from "../../components/Summary/Summary";
 import { Link } from "react-router-dom";
 import "./cart.css";
-import { BsFillTrashFill } from "react-icons/bs";
+import { AiOutlineDelete } from "react-icons/ai";
 
 export default function Cart() {
   const { items, totalAmount, addItem, removeItem, resetCart } =
@@ -60,7 +60,7 @@ export default function Cart() {
         </div>
         {items.length > 0 ? (
           <button className="trash-icon" onClick={() => resetCart()}>
-            <BsFillTrashFill size={30} />
+            <AiOutlineDelete size={30} />
           </button>
         ) : (
           ""

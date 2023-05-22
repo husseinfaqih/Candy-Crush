@@ -17,11 +17,12 @@
 }
 
 .cart-summary-page-title {
+  font-family: "Comfortaa";
   margin: 20px 0 20px 30px;
   color: black;
-  font-size: 2rem;
+  font-size: 1.7rem;
   letter-spacing: 2px;
-  font-weight: 200;
+  font-weight: 700;
 }
 
 .cart-summary-price {
@@ -29,15 +30,19 @@
 }
 
 .cart-payment-link {
+  font-family: "Comfortaa", cursive;
+  font-size: 15px;
   width: 80%;
   text-decoration: none;
   text-align: center;
   color: #fe97c4;
-  font-size: 1.2rem;
   letter-spacing: 2px;
   margin: 20px auto;
   background-color: #fee588;
   padding: 10px;
+}
+.cart-payment-link:hover {
+  font-style: italic;
 }
 
 .cart-payment-link-container {

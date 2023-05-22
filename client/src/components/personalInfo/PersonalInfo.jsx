@@ -113,7 +113,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
 
   return (
     <form onSubmit={handleSubmit} className="personal-form">
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="name">
           Name:
         </label>
@@ -128,7 +128,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
           }
         />
       </div>
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="addressLine1">
           Address Line 1:
         </label>
@@ -146,7 +146,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
 
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="city">
           City:
         </label>
@@ -161,7 +161,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
           }
         />
       </div>
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="postalCode">
           Postal Code:
         </label>
@@ -176,7 +176,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
           }
         />
       </div>
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="country">
           Country:
         </label>
@@ -191,7 +191,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
           }
         />
       </div>
-      <div>
+      <div className="personal-form-div">
         <label className="personal-form-label" htmlFor="email">
           Email:
         </label>
@@ -207,7 +207,7 @@ function PersonalInfo({ setPersonalData, setIsCorrectPersonalData }) {
         />
       </div>
       <button className="personal-info-button" type="submit">
-        To pay
+        PAY HERE
       </button>
     </form>
   );
