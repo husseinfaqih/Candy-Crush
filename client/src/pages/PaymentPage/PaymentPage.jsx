@@ -45,8 +45,8 @@ const PaymentPage = () => {
 
           {!isCorrectPersonalData && (
             <h3 className="payment-subtitle">
-              Enter the correct information in the fields below and then you can
-              proceed to payment
+              Please kindly provide the accurate information in the fields
+              below, and once completed, you may proceed with the payment.
             </h3>
           )}
         </div>
@@ -58,11 +58,12 @@ const PaymentPage = () => {
         )}
         {isCorrectPersonalData && (
           <div className="payment-container">
-            <p className="payment-text">
-              Your name
+            <p className="payment-text-name">
+              Your name:
               <span className="payment-text-black">{personalData.name}</span>
             </p>
-            <p className="payment-text">
+
+            <p className="payment-text-block">
               Your delivery address
               <span className="payment-text-black">
                 Country: {personalData.country}
@@ -97,7 +98,7 @@ const PaymentPage = () => {
           <div className="payment-container">
             <h4 className="payment-subtitle">Your payment was successful</h4>
             <Link className="payment-link-main-page" to="/products">
-              Continue shopping
+              CONTINUE SHOPPING
             </Link>
           </div>
         )}

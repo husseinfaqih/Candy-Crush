@@ -361,4 +361,25 @@
   .header-elements {
     padding: 0 2rem 0 2rem;
   }
+  .header-category-list {
+    width: 7rem;
+  }
+  .header-title {
+    margin-top: 6rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-category-list {
+    position: absolute;
+    left: 0;
+    top: 4rem;
+  }
+  .header-title {
+    display: none;
+  }
+  .header {
+    height: 350px;
+  }
 }

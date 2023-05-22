@@ -6,66 +6,90 @@
 
 .payment-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
 .payment-title {
-  margin: 20px auto;
-  font-size: 2rem;
-  line-height: 2.1rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  color: black;
-  font-family: "Abril Fatface";
+  font-family: "Abril Fatface", cursive;
+  font-weight: 10;
+  font-size: 3em;
+  line-height: 3.3rem;
+  color: white;
+  padding: 2rem;
+  margin: 0;
 }
-
-.payment-text {
-  margin: 10px auto;
+.payment-text-block {
+  font-family: "Comfortaa";
   font-size: 1.5rem;
-  line-height: 1.7rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: bold;
   color: black;
   display: flex;
   flex-direction: column;
-  letter-spacing: 2px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.payment-text {
   font-family: "Comfortaa";
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.payment-text-name {
+  font-family: "Comfortaa";
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .payment-subtitle {
-  margin: 20px auto;
-  font-size: 1.4rem;
-  line-height: 1.5rem;
-  color: white;
-  width: 80%;
-  font-style: italic;
   font-family: "Comfortaa";
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: center;
+  color: black;
+  padding: 0 2rem;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .payment-text-black {
-  margin: 0 auto;
-  color: black;
-  font-size: 1.1rem;
+  font-family: "Comfortaa";
+  font-size: 1.5rem;
   font-weight: 300;
-  letter-spacing: 2px;
+  color: black;
+  margin-top: 1rem;
+  font-style: italic;
 }
 
 .payment-button {
   display: flex;
-  width: 130px;
-  margin: 20px auto;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .payment-link-main-page {
-  margin: 30px auto 30px;
-  width: 80%;
-  padding: 10px 0;
-  text-align: center;
+  font-family: "Comfortaa", cursive;
+  font-size: 15px;
+  width: 30%;
   text-decoration: none;
+  text-align: center;
+  color: #fe97c4;
+  letter-spacing: 2px;
+  margin: 20px auto;
   background-color: #fee588;
-  cursor: pointer;
-  color: #f19cbd;
-  letter-spacing: 2.2px;
-  font-size: 1.4rem;
-  border: none;
+  padding: 10px;
 }
