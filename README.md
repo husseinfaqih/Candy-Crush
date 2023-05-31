@@ -1,5 +1,9 @@
 # Candy Crush - MERN Stack - E-Commerce - Class 41 final project
 
+![Image Description](CandyRush.png)
+
+CandyRush.png
+
 We built an e-commerce website called "***Sugar Rush***" for an online candy store.
 
  - The website is a fully functional, responsive, and user-friendly application.
