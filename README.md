@@ -1,4 +1,4 @@
-# Candy Crush - MERN Stack - E-Commerce - Class 41 final project
+# Candy Rush - MERN Stack - E-Commerce - Class 41 final project
 
 ![Image Description](CandyRush.png)
 
